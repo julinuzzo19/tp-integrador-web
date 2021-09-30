@@ -1,0 +1,209 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.subtitle {
+  font-family: 'Roboto Condensed';
+}
+/* Section and articles */
+.container {
+  padding: 0 6px 0 6px;
+}
+
+.section-articles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+/* Articles personajes */
+.article-personajes {
+  background-color: black;
+  width: 45%;
+  height: 240px;
+  margin: 6px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.article-personajes:after {
+  content: '';
+  position: absolute;
+  bottom: -11px;
+  right: -10px;
+  border: 10px solid #fff;
+  transform: rotate(45deg);
+}
+.img-article {
+  border-bottom: rgba(0, 0, 0, 0.2) solid 1px;
+  width: 100%;
+  height: 30vh;
+  border-bottom: white solid 3px;
+}
+.article-personajes .price-article {
+  color: white;
+  align-self: end;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.article-personajes .desc-article {
+  font-weight: bolder;
+  margin: 6px 0 0 5px;
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* Articles pelicula */
+.article-peliculas {
+  background-color: white;
+  width: 45%;
+  height: 240px;
+  margin: 6px;
+  margin-bottom: 10px;
+}
+.article-peliculas div p {
+  margin: 0;
+}
+/* FIN Section and articles */
+
+/* Footer */
+.footer {
+  background-color: #151515;
+  padding: 20px 0px;
+  height: 100vh;
+}
+.map {
+  width: 300px;
+  height: 200px;
+  align-self: center;
+  margin-top: 20px;
+}
+.container-footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.span-footer {
+  font-size: larger;
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+  margin-bottom: 15px;
+}
+.fab {
+  color: white;
+  margin: 0 5px 0 5px;
+}
+/* Toggle nav */
+.toggle-nav-a {
+  text-decoration: none;
+  color: #1e1e23;
+  opacity: 1;
+  font-family: 'work sans', sans serif;
+  font-size: 1.5em;
+  font-weight: 400;
+  transition: 200ms;
+}
+.toggle-nav-a:hover {
+  opacity: 0.5;
+}
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+nav {
+  background-color: black;
+  height: 65px;
+  display: flex;
+}
+#menuToggle {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 25px;
+  left: 25px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+  margin-right: 0;
+  width: 10px;
+}
+#menuToggle input {
+  display: flex;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+#menuToggle span {
+  display: flex;
+  width: 29px;
+  height: 2px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #ffffff;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 5px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-3px, -1px);
+  background: #36383f;
+}
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+#menu {
+  position: absolute;
+  width: 180px;
+  height: 400px;
+  box-shadow: 0 0 10px #85888c;
+  margin: -50px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background-color: #f5f6fa;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+#menu li {
+  padding: 10px 0;
+  transition-delay: 2s;
+}
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+.title-img {
+  width: 130px;
+  height: 64px;
+  margin-left: 100px;
+}
+.fa-shopping-cart {
+  color: white;
+}
+.div-nav-search {
+  text-align: end;
+  width: 100%;
+  align-self: center;
+  margin-right: 10px;
+}
+.div-title-img {
+  justify-self: center;
+}
+/* FIN Toggle nav */
