@@ -90,9 +90,19 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
   margin-bottom: 15px;
 }
+.div-redes-icons{
+  margin-bottom: 35px;
+}
+
+.div-ubicacion{
+  margin: 0;
+}
 .fab {
   color: white;
   margin: 0 5px 0 5px;
+}
+.fa-map-marker-alt{
+  color: white;
 }
 /* Toggle nav */
 .toggle-nav-a {
