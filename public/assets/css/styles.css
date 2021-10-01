@@ -69,7 +69,7 @@ body {
 
 /* Footer */
 .footer {
-  background-color: #151515;
+  background-color: #000;
   padding: 20px 0px;
   height: 100vh;
 }
@@ -90,18 +90,22 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
   margin-bottom: 15px;
 }
-.div-redes-icons{
+.div-redes-icons {
   margin-bottom: 35px;
 }
 
-.div-ubicacion{
+.div-ubicacion {
   margin: 0;
 }
 .fab {
   color: white;
   margin: 0 5px 0 5px;
+  background-color: #000;
 }
-.fa-map-marker-alt{
+.div-redes-icons a {
+  color: #000;
+}
+.fa-map-marker-alt {
   color: white;
 }
 /* Toggle nav */
@@ -148,7 +152,7 @@ nav {
   z-index: 2;
 }
 #menuToggle span {
-  display: flex;
+
   width: 29px;
   height: 2px;
   margin-bottom: 5px;
@@ -215,5 +219,16 @@ nav {
 }
 .div-title-img {
   justify-self: center;
+}
+
+.item-footer {
+  width: 100%;
+  margin-top: 150px;
+  text-align: center;
+  padding: 0 !important;
+}
+.item-copyright-footer{
+  padding: 0 !important;
+  text-align: center;
 }
 /* FIN Toggle nav */
