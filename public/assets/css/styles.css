@@ -4,6 +4,9 @@ body {
   margin: 0;
   padding: 0;
 }
+aside {
+  display: none;
+}
 .subtitle {
   font-family: 'Roboto Condensed';
 }
@@ -244,6 +247,16 @@ ul {
 
 /* Moviles en posicion horizontal o tablets en vertical 
 ------------------------------------------------------------------------------------------------*/
+@media (min-width: 600px) {
+  .article-personajes {
+
+    width: 30%;
+  }
+  .article-peliculas{
+    width: 30%;
+  }
+}
+
 @media (min-width: 768px) {
   nav {
     background-color: black;
@@ -307,13 +320,82 @@ ul {
   .item-footer {
     display: none;
   }
+
+  /* ----------------------------------------------------------------------- */
+  /* Section and articles */
+  .container {
+    padding: 0 10px 0 10px;
+  }
+  .section-articles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Articles personajes */
+  .article-personajes {
+    background-color: black;
+    width: 20%;
+    height: 250px;
+    margin: 6px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .article-personajes:after {
+    content: '';
+    position: absolute;
+    bottom: -11px;
+    right: -10px;
+    border: 10px solid #fff;
+    transform: rotate(45deg);
+  }
+  .img-article {
+    border-bottom: rgba(0, 0, 0, 0.2) solid 1px;
+    width: 100%;
+    height: 30vh;
+    border-bottom: white solid 3px;
+  }
+  .article-personajes .price-article {
+    color: white;
+    align-self: end;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .article-personajes .desc-article {
+    font-weight: bolder;
+    margin: 6px 0 0 5px;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+
+  /* Articles pelicula */
+  .article-peliculas {
+    background-color: white;
+    width: 20%;
+    height: 240px;
+    margin: 6px;
+    margin-bottom: 10px;
+  }
+  .article-peliculas div p {
+    margin: 0;
+  }
 }
 
 /* Tablets en horizontal y escritorios normales
 -------------------------------------------------------------------------------------------------*/
 
 @media (min-width: 1024px) {
-  /*  */
+  main {
+    display: grid;
+    grid-template-columns: 80% 20%;
+  }
+  aside {
+    display: block;
+    order: 2;
+    border: #000 1px solid;
+  }
   nav {
     background-color: black;
     height: 65px;
@@ -335,5 +417,10 @@ ul {
   }
   .fa-shopping-cart {
     color: white;
+  }
+  .ad-img{
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
   }
 }
