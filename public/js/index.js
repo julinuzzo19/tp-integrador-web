@@ -1,3 +1,7 @@
+import {URL_API,API_KEY} from './constants.js'
+
+
+
 // $(document).ready(() => {
 //   console.log('object');
 // });

@@ -85,15 +85,15 @@ nav {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-/* Articles pelicula */
-.article-peliculas {
+/* Articles Serie */
+.article-series {
   background-color: white;
   width: 45%;
   height: 240px;
   margin: 6px;
   margin-bottom: 10px;
 }
-.article-peliculas div p {
+.article-series div p {
   margin: 0;
 }
 /* FIN Section and articles */
@@ -257,7 +257,7 @@ ul {
   .article-personajes {
     width: 30%;
   }
-  .article-peliculas {
+  .article-series {
     width: 30%;
   }
 }
@@ -382,15 +382,15 @@ ul {
     font-family: 'Roboto Condensed', sans-serif;
   }
 
-  /* Articles pelicula */
-  .article-peliculas {
+  /* Articles Serie */
+  .article-series {
     background-color: white;
     width: 20%;
     height: 240px;
     margin: 6px;
     margin-bottom: 10px;
   }
-  .article-peliculas div p {
+  .article-series div p {
     margin: 0;
   }
 }
