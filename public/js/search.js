@@ -68,7 +68,7 @@ const getArticles = (url, category) => {
       if (category === 'serie') {
         for (const article of articlesFounded) {
           $('.section-articles').append(`
-            <article class="article-series">
+            <article class="article-series" id="${article.id}" >
              <img
                src="${article.thumbnail.path}/portrait_incredible.jpg"
                class="img-article"
@@ -81,11 +81,13 @@ const getArticles = (url, category) => {
                </p>
              </div>
            </article>`);
+
+          redirectArticle(article.id, category);
         }
       } else if (category === 'personaje') {
         for (const article of articlesFounded) {
           $('.section-articles').append(`
-          <article class="article-personajes">
+          <article class="article-personajes" id="${article.id}">
           <img
             src="${article.thumbnail.path}/portrait_medium.jpg"
             class="img-article"
@@ -95,11 +97,12 @@ const getArticles = (url, category) => {
            
           </div>
         </article>`);
+          redirectArticle(article.id, category);
         }
       } else {
         for (const article of articlesFounded) {
           $('.section-articles').append(`
-            <article class="article-series">
+            <article class="article-series" id="${article.id}">
              <img
                src="${article.thumbnail.path}/portrait_incredible.jpg"
                class="img-article"
@@ -112,6 +115,8 @@ const getArticles = (url, category) => {
                </p>
              </div>
            </article>`);
+
+          redirectArticle(article.id, 'serie');
         }
       }
 
@@ -125,4 +130,16 @@ const getArticles = (url, category) => {
 const resetSearch = () => {
   $('.section-articles').html('');
   $('#btn-ver-mas').css({display: 'none'});
+};
+
+const redirectArticle = (id, category) => {
+  if (category === 'serie') {
+    $(`#${id}`).click(() => {
+      window.location.href = `../pages/serie.html?id=${id}`;
+    });
+  } else {
+    $(`#${id}`).click(() => {
+      window.location.href = `../pages/character.html?id=${id}`;
+    });
+  }
 };
