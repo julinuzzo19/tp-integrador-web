@@ -1,11 +1,11 @@
-import {URL_API_CHARACTERS, URL_API_SERIES, URL_API} from './constants.js';
+import {URL_API_CHARACTERS, URL_API_SERIES} from './constants.js';
 
 var limitResults = 10;
+var URL;
 
 $('#btn-ver-mas').click(() => {
   limitResults += 10;
   getDataForm();
-
 });
 
 $(document).ready(() => {
@@ -22,16 +22,32 @@ const getDataForm = () => {
 
 const searchArticles = (query, category) => {
   resetSearch();
-  let URL;
+
   let queryParam;
 
   if (query) {
     if (category === 'serie') {
       queryParam = 'title';
       URL = URL_API_SERIES + `&${queryParam}=${query}`;
+
+      getArticles(URL, category);
+    } else if (category === 'personaje') {
+      queryParam = 'nameStartsWith';
+      URL = URL_API_CHARACTERS + `&${queryParam}=${query}`;
+      getArticles(URL, category);
     } else {
       queryParam = 'nameStartsWith';
       URL = URL_API_CHARACTERS + `&${queryParam}=${query}`;
+      $.get({
+        url: `${URL}`,
+        success: (response) => {
+          let characterId = response.data.results[0].id;
+          URL =
+            URL_API_SERIES +
+            `&characters=${characterId}&orderBy=title&contains=comic`;
+          getArticles(URL, category);
+        }
+      });
     }
   } else {
     if (category === 'serie') {
@@ -39,16 +55,18 @@ const searchArticles = (query, category) => {
     } else {
       URL = URL_API_CHARACTERS;
     }
+    getArticles(URL, category);
   }
+};
 
+const getArticles = (url, category) => {
   $.get({
-    url: `${URL}&limit=${limitResults}`,
+    url: `${url}&limit=${limitResults}`,
     success: (response) => {
       let articlesFounded = response.data.results;
 
       if (category === 'serie') {
         for (const article of articlesFounded) {
-          console.log(article);
           $('.section-articles').append(`
             <article class="article-series">
              <img
@@ -64,7 +82,7 @@ const searchArticles = (query, category) => {
              </div>
            </article>`);
         }
-      } else {
+      } else if (category === 'personaje') {
         for (const article of articlesFounded) {
           $('.section-articles').append(`
           <article class="article-personajes">
@@ -77,6 +95,23 @@ const searchArticles = (query, category) => {
            
           </div>
         </article>`);
+        }
+      } else {
+        for (const article of articlesFounded) {
+          $('.section-articles').append(`
+            <article class="article-series">
+             <img
+               src="${article.thumbnail.path}/portrait_incredible.jpg"
+               class="img-article"
+             />
+             <div>
+               <p>
+                ${article.title}
+                 <br />
+                 <small>JUL 2, 2019</small>
+               </p>
+             </div>
+           </article>`);
         }
       }
 
