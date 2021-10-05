@@ -10,6 +10,20 @@ aside {
 .subtitle {
   font-family: 'Roboto Condensed';
 }
+/* ESTILOS DE PAGINA DE BUSQUEDA  */
+.div-filters {
+  margin-bottom: 20px;
+}
+.div-more-results {
+  display: flex;
+  justify-content: center;
+}
+#btn-ver-mas {
+  width: 40%;
+  margin-top: 20px;
+  display: none;
+}
+/*  */
 
 /* NAV */
 nav {
