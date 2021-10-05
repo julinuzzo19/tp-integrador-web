@@ -1,3 +1,4 @@
+import {randomPrice} from './constants.js';
 //Personajes populares
 //thanos 1009652
 //wolverine 1009718
@@ -18,6 +19,8 @@ for (const characterId of charactersPopular) {
       let articlesFounded = response.data.results;
 
       for (const article of articlesFounded) {
+        article.price = randomPrice();
+
         let desc = article.description.replaceAll(/'/g, ' ');
         $('#div-personajes').append(`
           <article class="article-personajes">
@@ -54,6 +57,8 @@ for (const serieId of seriesPopular) {
       let articlesFounded = response.data.results;
 
       for (const article of articlesFounded) {
+        article.price = randomPrice();
+
         $('#div-series').append(`
             <article class="article-series">
              <img
