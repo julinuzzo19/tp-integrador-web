@@ -25,6 +25,8 @@ aside {
 }
 /*  */
 
+
+
 /* NAV */
 nav {
   background-color: black;
@@ -48,6 +50,14 @@ nav {
 }
 .fa-shopping-cart {
   color: white;
+}
+/* Share */
+.fa-share-alt-square {
+  color: white;
+  font-size: x-large;
+}
+.style-black{
+  color: black !important;
 }
 
 /* Section and articles */

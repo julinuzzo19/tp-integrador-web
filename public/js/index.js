@@ -25,7 +25,9 @@ for (const characterId of charactersPopular) {
             class="img-article"
           />
           <div>
-            <h4 class="desc-article">${article.name}</h4>   
+            <h4 class="desc-article">${article.name}</h4>  
+            <i class="fas fa-share-alt-square" onclick="window.location.href='../pages/sendForm.html?name=${article.name}&description=${article.description}&image=${article.thumbnail.path}/portrait_medium.jpg'"></i>
+            <i class="fas fa-shopping-cart"></i>
           </div>
         </article>`);
       }
@@ -49,9 +51,11 @@ for (const serieId of seriesPopular) {
     url: `https://gateway.marvel.com:443/v1/public/series/${serieId}?apikey=009e32091293e7d1531b865c1241db7f`,
     success: (response) => {
       let articlesFounded = response.data.results;
+      
       for (const article of articlesFounded) {
+        console.log(article.description)
         $('#div-series').append(`
-    <article class="article-series">
+            <article class="article-series">
              <img
                src="${article.thumbnail.path}/portrait_medium.jpg"
                class="img-article"
@@ -61,6 +65,8 @@ for (const serieId of seriesPopular) {
                 ${article.title}
                  <br />
                  <small>JUL 2, 2019</small>
+                 <i class="fas fa-share-alt-square style-black" onclick="window.location.href='../pages/sendForm.html?name=${article.title}&description=${article.description}&image=${article.thumbnail.path}/portrait_medium.jpg'"></i>
+                 <i class="fas fa-shopping-cart style-black"></i>
                </p>
              </div>
            </article>`);
