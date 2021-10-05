@@ -1,15 +1,15 @@
 //Personajes populares
-//Iron man 1017104
-//Captaim america 1017105
+//thanos 1009652
+//wolverine 1009718
 //spiderman peter parker 1009610
 //hulk 1009351
 //thor 1009664
-//black widow 1009189
-//deadpool 1009268
-//doctor strange 1009282
+//venom  1009663
+//vision 1009697
+//falcon 1009297
 
 let charactersPopular = [
-  1017104, 1017105, 1009610, 1009351, 1009664, 1009268, 1009282, 1009189
+  1009652, 1009718, 1009610, 1009351, 1009664, 1009697, 1009297, 1009663
 ];
 for (const characterId of charactersPopular) {
   $.get({
@@ -18,6 +18,7 @@ for (const characterId of charactersPopular) {
       let articlesFounded = response.data.results;
 
       for (const article of articlesFounded) {
+        let desc = article.description.replaceAll(/'/g, ' ');
         $('#div-personajes').append(`
           <article class="article-personajes">
           <img
@@ -26,7 +27,7 @@ for (const characterId of charactersPopular) {
           />
           <div>
             <h4 class="desc-article">${article.name}</h4>  
-            <i class="fas fa-share-alt-square" onclick="window.location.href='../pages/sendForm.html?name=${article.name}&description=${article.description}&image=${article.thumbnail.path}/portrait_medium.jpg'"></i>
+            <i class="fas fa-share-alt-square" onclick="window.location.href='../pages/compartir.html?name=${article.name}&description=${desc}&image=${article.thumbnail.path}/portrait_medium.jpg'"></i>
             <i class="fas fa-shopping-cart"></i>
           </div>
         </article>`);
@@ -51,9 +52,8 @@ for (const serieId of seriesPopular) {
     url: `https://gateway.marvel.com:443/v1/public/series/${serieId}?apikey=009e32091293e7d1531b865c1241db7f`,
     success: (response) => {
       let articlesFounded = response.data.results;
-      
+
       for (const article of articlesFounded) {
-        console.log(article.description)
         $('#div-series').append(`
             <article class="article-series">
              <img
@@ -65,7 +65,7 @@ for (const serieId of seriesPopular) {
                 ${article.title}
                  <br />
                  <small>JUL 2, 2019</small>
-                 <i class="fas fa-share-alt-square style-black" onclick="window.location.href='../pages/sendForm.html?name=${article.title}&description=${article.description}&image=${article.thumbnail.path}/portrait_medium.jpg'"></i>
+                 <i class="fas fa-share-alt-square style-black" onclick="window.location.href='../pages/compartir.html?name=${article.title}&description=${article.description}&image=${article.thumbnail.path}/portrait_medium.jpg'"></i>
                  <i class="fas fa-shopping-cart style-black"></i>
                </p>
              </div>
