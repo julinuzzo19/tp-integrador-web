@@ -1,4 +1,4 @@
-import {URL_API_CHARACTERS, URL_API_SERIES} from './constants.js';
+import {URL_API_CHARACTERS, URL_API_SERIES, printArticle} from './constants.js';
 
 var limitResults = 10;
 var URL;
@@ -67,56 +67,15 @@ const getArticles = (url, category) => {
 
       if (category === 'serie') {
         for (const article of articlesFounded) {
-          $('.section-articles').append(`
-            <article class="article-series" id="${article.id}" >
-             <img
-               src="${article.thumbnail.path}/portrait_incredible.jpg"
-               class="img-article"
-             />
-             <div>
-               <p>
-                ${article.title}
-                 <br />
-                 <small>JUL 2, 2019</small>
-               </p>
-             </div>
-           </article>`);
-
-          redirectArticle(article.id, category);
+          printArticle(article, '.section-articles');
         }
       } else if (category === 'personaje') {
         for (const article of articlesFounded) {
-          $('.section-articles').append(`
-          <article class="article-personajes" id="${article.id}">
-          <img
-            src="${article.thumbnail.path}/portrait_medium.jpg"
-            class="img-article"
-          />
-          <div>
-            <h4 class="desc-article">${article.name} </h4>
-           
-          </div>
-        </article>`);
-          redirectArticle(article.id, category);
+          printArticle(article, '.section-articles');
         }
       } else {
         for (const article of articlesFounded) {
-          $('.section-articles').append(`
-            <article class="article-series" id="${article.id}">
-             <img
-               src="${article.thumbnail.path}/portrait_incredible.jpg"
-               class="img-article"
-             />
-             <div>
-               <p>
-                ${article.title}
-                 <br />
-                 <small>JUL 2, 2019</small>
-               </p>
-             </div>
-           </article>`);
-
-          redirectArticle(article.id, 'serie');
+          printArticle(article, '.section-articles');
         }
       }
 
@@ -130,16 +89,4 @@ const getArticles = (url, category) => {
 const resetSearch = () => {
   $('.section-articles').html('');
   $('#btn-ver-mas').css({display: 'none'});
-};
-
-const redirectArticle = (id, category) => {
-  if (category === 'serie') {
-    $(`#${id}`).click(() => {
-      window.location.href = `../pages/serie.html?id=${id}`;
-    });
-  } else {
-    $(`#${id}`).click(() => {
-      window.location.href = `../pages/character.html?id=${id}`;
-    });
-  }
 };

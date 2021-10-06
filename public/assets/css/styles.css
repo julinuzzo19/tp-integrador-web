@@ -48,6 +48,9 @@ nav {
   align-self: center;
   margin-left: -10px;
 }
+/*  */
+
+/* Desc articles */
 .fa-shopping-cart {
   color: white;
 }
@@ -58,6 +61,12 @@ nav {
 }
 .style-black{
   color: black !important;
+}
+.price-serie{
+
+}
+.price-personaje{
+  color: white;
 }
 
 /* Section and articles */

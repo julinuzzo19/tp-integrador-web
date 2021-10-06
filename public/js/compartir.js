@@ -2,18 +2,19 @@ $(document).ready(() => {
   const params = new URLSearchParams(window.location.search);
 
   let nameArticle = params.get('name');
+  let priceArticle = params.get('price');
   let descArticle = params.get('description');
   if (descArticle != null) {
     descArticle = 'No hay descripción';
   }
   let imageArticle = params.get('image');
 
-  console.log(nameArticle, descArticle, imageArticle);
+  console.log(nameArticle, descArticle, imageArticle, priceArticle);
   document.getElementById('img-article-compartido').src = imageArticle;
   document.getElementById('nombre-article-compartido').value = nameArticle;
 
   document.getElementById('form-mail').onsubmit = () => {
-      event.preventDefault();
+    event.preventDefault();
     let emailReceptor = document.getElementById('receptor').value;
     let asunto = `Te Comparto el articulo de ${nameArticle}`;
     let body = descArticle;
