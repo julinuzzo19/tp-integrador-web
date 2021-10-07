@@ -1,4 +1,4 @@
-import {getArticlesLS, printArticle} from './constants.js';
+import {getArticlesLS, printArticle, removeRepetidos} from './constants.js';
 
 $(document).ready(() => {
   let articlesLS = getArticlesLS('articles');
@@ -11,14 +11,9 @@ $(document).ready(() => {
   let articlesHistory = getArticlesLS('historial');
   console.log(articlesHistory);
 
-  // Logica para eliminar repetidos en localstorage historial
+  let articlesHistorySR = removeRepetidos(articlesHistory);
 
-
-
-
-
-  console.log(articlesHistorySinRepeticion);
-  for (const article of articlesHistorySinRepeticion) {
+  for (const article of articlesHistorySR) {
     article.category = 'carrito';
     printArticle(article, '#section-historial-articles');
   }

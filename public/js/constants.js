@@ -101,6 +101,33 @@ export const randomPrice = () => {
   return array[randomIndex];
 };
 
+// Eliminar repetidos
+export const removeRepetidos = (articlesHistory) => {
+  let articlesHistorySR = [];
+  let articlesId = [];
+  for (const article of articlesHistory) {
+    articlesId.push(article.id);
+  }
+
+  let articlesIdSR = [];
+  articlesId.forEach((item) => {
+    if (!articlesIdSR.includes(item)) {
+      articlesIdSR.push(item);
+    }
+  });
+  for (let index = 0; index < articlesIdSR.length; index++) {
+    const id = articlesIdSR[index];
+
+    for (const item of articlesHistory) {
+      if (id === item.id) {
+        articlesHistorySR.push(item);
+        break;
+      }
+    }
+  }
+  return articlesHistorySR;
+};
+
 //Metodos de localstorage
 export const saveToLS = (article) => {
   let objectLS;
@@ -110,8 +137,11 @@ export const saveToLS = (article) => {
     objectLS = 'articles';
   }
   let articlesLS = getArticlesLS(objectLS);
-  articlesLS.push(article);
-  localStorage.setItem(objectLS, JSON.stringify(articlesLS));
+  articlesLS.push(article); 
+
+  let articlesLSSinRepeticion = removeRepetidos(articlesLS);
+
+  localStorage.setItem(objectLS, JSON.stringify(articlesLSSinRepeticion));
 };
 
 export const getArticlesLS = (objectLS) => {
