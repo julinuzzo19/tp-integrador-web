@@ -10,6 +10,7 @@ for (const characterId of charactersPopular) {
       let articlesFounded = response.data.results;
 
       for (const article of articlesFounded) {
+        article.category='character'
         printArticle(article, '#div-personajes');
       }
     }
@@ -24,6 +25,7 @@ for (const serieId of seriesPopular) {
       let articlesFounded = response.data.results;
 
       for (const article of articlesFounded) {
+        article.category='serie'
         printArticle(article, '#div-series');
       }
     }

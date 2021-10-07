@@ -9,15 +9,15 @@ export const URL_API_SERIE_ID = URL_API + 'series/';
 export const printArticle = (article, place) => {
   article.price = randomPrice();
 
+  //Completa la descripcion si esta vacia
   if (article.description === null) {
     article.description =
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos earum labore minima id a, cumque voluptatum et totam.';
   }
-  console.log(article.description);
   article.description = article.description.replaceAll(/'/g, ' ');
 
-  if (article.title != undefined) {
-    //Series articulos
+  //print Series articulos
+  if (article.category === 'serie') {
     $(place).append(`
     <article class="article-series" id="${article.id}">
      <img id="img-${article.id}"
@@ -30,13 +30,13 @@ export const printArticle = (article, place) => {
          <br />
          <small class="price-serie">$${article.price}</small>
          <i class="fas fa-share-alt-square style-black" onclick="window.location.href='../pages/compartir.html?name=${article.title}&description=${article.description}&image=${article.thumbnail.path}/portrait_medium.jpg&price=${article.price}'"></i>
-         <i class="fas fa-shopping-cart style-black"></i>
+         <i id="carrito-${article.id}" class="fas fa-shopping-cart style-black"></i>
        </p>
      </div>
    </article>`);
-    redirectArticle(article.id, 'serie');
-  } else {
-    //personajes
+  }
+  //print personajes articulos
+  else if (article.category === 'character') {
     $(place).append(`
     <article class="article-personajes" id="${article.id}">
     <img id="img-${article.id}"
@@ -47,25 +47,49 @@ export const printArticle = (article, place) => {
       <h4 class="desc-article">${article.name}</h4>  
       <small class="price-personaje">$${article.price}</small>
       <i class="fas fa-share-alt-square" onclick="window.location.href='../pages/compartir.html?name=${article.name}&description=${article.description}&image=${article.thumbnail.path}/portrait_medium.jpg&price=${article.price}'"></i>
-      <i class="fas fa-shopping-cart"></i>
+      <i id="carrito-${article.id}" class="fas fa-shopping-cart"></i>
     </div>
   </article>`);
 
-    redirectArticle(article.id, 'personaje');
+    //print articulos del carrito
+  } else if (article.category === 'carrito') {
+    $(place).append(
+      `<article class="article-personajes" id="${article.id}">
+    <img id="img-${article.id}"
+      src="${article.thumbnail.path}/portrait_medium.jpg"
+      class="img-article"
+    />
+    <div>
+      <h4 class="desc-article">${article.name || article.title}</h4>  
+      <small class="price-personaje">$${article.price}</small>
+      <i class="fas fa-share-alt-square" onclick="window.location.href='../pages/compartir.html?name=${
+        article.name
+      }&description=${article.description}&image=${
+        article.thumbnail.path
+      }/portrait_medium.jpg&price=${article.price}'"></i>
+      <i id="carrito-${article.id}" class="fas fa-shopping-cart"></i>
+    </div>
+  </article>`
+    );
   }
+  addArticleToCarrito(article);
+  redirectArticle(article);
 };
 
 // Metodo para redireccion al articulo al hacer click sobre la imagen
-const redirectArticle = (id, category) => {
-  if (category === 'serie') {
-    $(`#img-${id}`).click(() => {
-      window.location.href = `../pages/serie.html?id=${id}`;
-    });
-  } else {
-    $(`#img-${id}`).click(() => {
-      window.location.href = `../pages/character.html?id=${id}`;
-    });
-  }
+const redirectArticle = (article) => {
+  $(`#img-${article.id}`).click(() => {
+    window.location.href = `../pages/${article.category}.html?id=${article.id}`;
+    article.historial = true;
+    saveToLS(article);
+  });
+};
+
+// Agregar funcionalidad al boton agregar al carrito
+const addArticleToCarrito = (article) => {
+  $(`#carrito-${article.id}`).click(() => {
+    saveToLS(article);
+  });
 };
 
 //Metodo para obtener precio random
@@ -79,18 +103,24 @@ export const randomPrice = () => {
 
 //Metodos de localstorage
 export const saveToLS = (article) => {
-  let articlesLS = getArticlesLS();
-
-  localStorage.setItem('articles', JSON.stringify(articlesLS));
+  let objectLS;
+  if (article.historial) {
+    objectLS = 'historial';
+  } else {
+    objectLS = 'articles';
+  }
+  let articlesLS = getArticlesLS(objectLS);
+  articlesLS.push(article);
+  localStorage.setItem(objectLS, JSON.stringify(articlesLS));
 };
 
-export const getArticlesLS = () => {
+export const getArticlesLS = (objectLS) => {
   let articlesLS;
 
-  if (localStorage.getItem('articles') === null) {
+  if (localStorage.getItem(objectLS) === null) {
     articlesLS = [];
   } else {
-    articlesLS = JSON.parse(localStorage.getItem('articles'));
+    articlesLS = JSON.parse(localStorage.getItem(objectLS));
   }
 
   return articlesLS;

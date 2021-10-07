@@ -31,7 +31,7 @@ const searchArticles = (query, category) => {
       URL = URL_API_SERIES + `&${queryParam}=${query}`;
 
       getArticles(URL, category);
-    } else if (category === 'personaje') {
+    } else if (category === 'character') {
       queryParam = 'nameStartsWith';
       URL = URL_API_CHARACTERS + `&${queryParam}=${query}`;
       getArticles(URL, category);
@@ -67,14 +67,17 @@ const getArticles = (url, category) => {
 
       if (category === 'serie') {
         for (const article of articlesFounded) {
+          article.category = category;
           printArticle(article, '.section-articles');
         }
-      } else if (category === 'personaje') {
+      } else if (category === 'character') {
         for (const article of articlesFounded) {
+          article.category = category;
           printArticle(article, '.section-articles');
         }
       } else {
         for (const article of articlesFounded) {
+          article.category = 'serie';
           printArticle(article, '.section-articles');
         }
       }
