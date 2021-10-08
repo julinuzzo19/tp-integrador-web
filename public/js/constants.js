@@ -89,6 +89,7 @@ const redirectArticle = (article) => {
 const addArticleToCarrito = (article) => {
   $(`#carrito-${article.id}`).click(() => {
     saveToLS(article);
+    showToast();
   });
 };
 
@@ -128,6 +129,19 @@ export const removeRepetidos = (articlesHistory) => {
   return articlesHistorySR;
 };
 
+//Mostrar toast
+const showToast = (params) => {
+  var x = document.getElementById('snackbar');
+
+  // Add the "show" class to DIV
+  x.className = 'show';
+
+  // After 3 seconds, remove the show class from DIV
+  setTimeout(() => {
+    x.className = x.className.replace('show', '');
+  }, 3000);
+};
+
 //Metodos de localstorage
 export const saveToLS = (article) => {
   let objectLS;
@@ -137,7 +151,7 @@ export const saveToLS = (article) => {
     objectLS = 'articles';
   }
   let articlesLS = getArticlesLS(objectLS);
-  articlesLS.push(article); 
+  articlesLS.push(article);
 
   let articlesLSSinRepeticion = removeRepetidos(articlesLS);
 
