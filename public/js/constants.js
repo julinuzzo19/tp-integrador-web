@@ -19,66 +19,47 @@ export const printArticle = (article, place) => {
   //print Series articulos
   if (article.category === 'serie') {
     $(place).append(`
-    <article class="article-series" id="${article.id}">
-     <img id="img-${article.id}"
-       src="${article.thumbnail.path}/portrait_medium.jpg"
-       class="img-article"
-     />
-     <div>
-       <p>
-        ${article.title}
-         <br />
-         <small class="price-serie">$${article.price}</small>
-         <i class="fas fa-share-alt-square style-black" onclick="window.location.href='../pages/compartir.html?name=${article.title}&description=${article.description}&image=${article.thumbnail.path}/portrait_medium.jpg&price=${article.price}'"></i>
-         <i id="carrito-${article.id}" class="fas fa-shopping-cart style-black"></i>
-       </p>
-     </div>
-   </article>`);
+      <article class="article-series" id="${article.id}">
+       <img id="img-${article.id}"
+         src="${article.thumbnail.path}/portrait_medium.jpg"
+         class="img-article"
+       />
+       <div>
+         <p>
+          ${article.title}
+           <br />
+           <small class="price-serie">$${article.price}</small>
+           <i class="fas fa-share-alt-square style-black" onclick="window.location.href='../pages/compartir.html?name=${article.title}&description=${article.description}&image=${article.thumbnail.path}/portrait_medium.jpg&price=${article.price}'"></i>
+           <i id="carrito-${article.id}" class="fas fa-shopping-cart style-black"></i>
+         </p>
+       </div>
+     </article>`);
   }
   //print personajes articulos
   else if (article.category === 'character') {
     $(place).append(`
-    <article class="article-personajes" id="${article.id}">
-    <img id="img-${article.id}"
-      src="${article.thumbnail.path}/portrait_medium.jpg"
-      class="img-article"
-    />
-    <div>
-      <h4 class="desc-article">${article.name}</h4>  
-      <small class="price-personaje">$${article.price}</small>
-      <i class="fas fa-share-alt-square" onclick="window.location.href='../pages/compartir.html?name=${article.name}&description=${article.description}&image=${article.thumbnail.path}/portrait_medium.jpg&price=${article.price}'"></i>
-      <i id="carrito-${article.id}" class="fas fa-shopping-cart"></i>
-    </div>
-  </article>`);
-
-    //print articulos del carrito
-  } else if (article.category === 'carrito') {
-    $(place).append(
-      `<article class="article-personajes" id="${article.id}">
-    <img id="img-${article.id}"
-      src="${article.thumbnail.path}/portrait_medium.jpg"
-      class="img-article"
-    />
-    <div>
-      <h4 class="desc-article">${article.name || article.title}</h4>  
-      <small class="price-personaje">$${article.price}</small>
-      <i class="fas fa-share-alt-square" onclick="window.location.href='../pages/compartir.html?name=${
-        article.name
-      }&description=${article.description}&image=${
-        article.thumbnail.path
-      }/portrait_medium.jpg&price=${article.price}'"></i>
-      <i id="carrito-${article.id}" class="fas fa-shopping-cart"></i>
-    </div>
-  </article>`
-    );
+      <article class="article-personajes" id="${article.id}">
+      <img id="img-${article.id}"
+        src="${article.thumbnail.path}/portrait_medium.jpg"
+        class="img-article"
+      />
+      <div>
+        <h4 class="desc-article">${article.name}</h4>  
+        <small class="price-personaje">$${article.price}</small>
+        <i class="fas fa-share-alt-square" onclick="window.location.href='../pages/compartir.html?name=${article.name}&description=${article.description}&image=${article.thumbnail.path}/portrait_medium.jpg&price=${article.price}'"></i>
+        <i id="carrito-${article.id}" class="fas fa-shopping-cart"></i>
+      </div>
+    </article>`);
   }
-  addArticleToCarrito(article);
+
+  addArticleToCarrito(article, place);
   redirectArticle(article);
 };
 
 // Metodo para redireccion al articulo al hacer click sobre la imagen
 const redirectArticle = (article) => {
   $(`#img-${article.id}`).click(() => {
+    console.log(article.category);
     window.location.href = `../pages/${article.category}.html?id=${article.id}`;
     article.historial = true;
     saveToLS(article);
@@ -87,10 +68,32 @@ const redirectArticle = (article) => {
 
 // Agregar funcionalidad al boton agregar al carrito
 const addArticleToCarrito = (article) => {
-  $(`#carrito-${article.id}`).click(() => {
-    saveToLS(article);
-    showToast();
-  });
+  if (article.place == 'carrito' && !article.historial) {
+    $(`#carrito-${article.id}`).removeClass('fa-shopping-cart');
+    $(`#carrito-${article.id}`).addClass('fa-trash');
+
+    $(`#carrito-${article.id}`).on('click', (e) => {
+      removeCart(article);
+      e.stopImmediatePropagation();
+    });
+  } else {
+    $(`#carrito-${article.id}`).on('click', () => {
+      addCart(article);
+    });
+  }
+};
+
+//Funcion para agregar al carrito
+const addCart = (article) => {
+  article.historial = false;
+  saveToLS(article);
+  showToast();
+  printArticlesCarrito();
+};
+
+const removeCart = (article) => {
+  deleteArticleLS(article.id);
+  printArticlesCarrito();
 };
 
 //Metodo para obtener precio random
@@ -130,15 +133,11 @@ export const removeRepetidos = (articlesHistory) => {
 };
 
 //Mostrar toast
-const showToast = (params) => {
-  var x = document.getElementById('snackbar');
-
-  // Add the "show" class to DIV
-  x.className = 'show';
-
-  // After 3 seconds, remove the show class from DIV
+const showToast = () => {
+  var toast = document.getElementById('toast');
+  toast.className = 'show';
   setTimeout(() => {
-    x.className = x.className.replace('show', '');
+    toast.className = toast.className.replace('show', '');
   }, 3000);
 };
 
@@ -171,9 +170,36 @@ export const getArticlesLS = (objectLS) => {
 };
 
 export const deleteArticleLS = (id) => {
-  let articlesLS = getArticlesLS();
+  let articlesLS = getArticlesLS('articles');
 
-  articlesLS.forEach((article, index) => {});
+  articlesLS.forEach((article, index) => {
+    if (article.id === id) {
+      articlesLS.splice(index, 1);
+    }
+  });
 
-  localStorage.setItem('article', JSON.stringify(articlesLS));
+  localStorage.setItem('articles', JSON.stringify(articlesLS));
+};
+
+export const printArticlesCarrito = () => {
+  let precioTotal = 0;
+  let articlesLS = getArticlesLS('articles');
+  $('#section-carrito-articles').html('');
+  articlesLS.forEach((article) => {
+    article.place = 'carrito';
+    printArticle(article, '#section-carrito-articles');
+    precioTotal += article.price;
+  });
+  $('#precioTotal').html(precioTotal);
+};
+
+export const printArticlesHistorial = () => {
+  let articlesHistory = getArticlesLS('historial');
+  let articlesHistorySR = removeRepetidos(articlesHistory);
+
+  for (const article of articlesHistorySR) {
+    article.place = 'carrito';
+    article.historial = true;
+    printArticle(article, '#section-historial-articles');
+  }
 };

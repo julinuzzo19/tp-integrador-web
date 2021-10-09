@@ -57,6 +57,12 @@ nav {
   color: white;
   font-size: x-large;
 }
+
+.fa-trash {
+  color: white;
+
+}
+
 .style-black {
   color: black !important;
 }
@@ -612,7 +618,7 @@ ul {
 }
 
 /*------------------------------------------------- TOAST------------------------------------------------------- */
-#snackbar {
+#toast {
   visibility: hidden;
   min-width: 250px;
   margin-left: -125px;
@@ -628,7 +634,7 @@ ul {
   bottom: 30px;
 }
 
-#snackbar.show {
+#toast.show {
   visibility: visible;
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
