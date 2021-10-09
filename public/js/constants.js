@@ -7,8 +7,6 @@ export const URL_API_SERIE_ID = URL_API + 'series/';
 
 // Metodo para imprimir por pantalla
 export const printArticle = (article, place) => {
-  article.price = randomPrice();
-
   //Completa la descripcion si esta vacia
   if (article.description === null) {
     article.description =
@@ -68,7 +66,10 @@ const redirectArticle = (article) => {
 
 // Agregar funcionalidad al boton agregar al carrito
 const addArticleToCarrito = (article) => {
-  if (article.place == 'carrito' && !article.historial) {
+  var path = window.location.pathname;
+  var page = path.split('/').pop();
+
+  if (article.place == 'carrito' && !article.historial && page != 'search.html') {
     $(`#carrito-${article.id}`).removeClass('fa-shopping-cart');
     $(`#carrito-${article.id}`).addClass('fa-trash');
 
@@ -144,6 +145,7 @@ const showToast = () => {
 //Metodos de localstorage
 export const saveToLS = (article) => {
   let objectLS;
+
   if (article.historial) {
     objectLS = 'historial';
   } else {
@@ -185,6 +187,10 @@ export const printArticlesCarrito = () => {
   let precioTotal = 0;
   let articlesLS = getArticlesLS('articles');
   $('#section-carrito-articles').html('');
+  if (articlesLS.length == 0) {
+    $('#section-carrito-articles').append('<h1>No hay elementos en el carrito</h1>');
+  }
+
   articlesLS.forEach((article) => {
     article.place = 'carrito';
     printArticle(article, '#section-carrito-articles');

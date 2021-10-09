@@ -5,7 +5,8 @@ $(document).ready(() => {
   let priceArticle = params.get('price');
   let descArticle = params.get('description');
   if (descArticle != null) {
-    descArticle = 'No hay descripción';
+    descArticle =
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam facere consequuntur odit. Repellendus necessitatibus eveniet minima. Expedita adipisci quo dolores delectus, est sint ducimus voluptatibus corrupti excepturi architecto rerum mollitia?';
   }
   let imageArticle = params.get('image');
 

@@ -1,4 +1,9 @@
-import {URL_API_CHARACTERS, URL_API_SERIES, printArticle} from './constants.js';
+import {
+  URL_API_CHARACTERS,
+  URL_API_SERIES,
+  printArticle,
+  randomPrice
+} from './constants.js';
 
 var limitResults = 10;
 var URL;
@@ -68,15 +73,18 @@ const getArticles = (url, category) => {
       if (category === 'serie') {
         for (const article of articlesFounded) {
           article.category = category;
+          article.price = randomPrice();
           printArticle(article, '.section-articles');
         }
       } else if (category === 'character') {
         for (const article of articlesFounded) {
+          article.price = randomPrice();
           article.category = category;
           printArticle(article, '.section-articles');
         }
       } else {
         for (const article of articlesFounded) {
+          article.price = randomPrice();
           article.category = 'serie';
           printArticle(article, '.section-articles');
         }
