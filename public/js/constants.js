@@ -186,9 +186,18 @@ export const deleteArticleLS = (id) => {
 export const printArticlesCarrito = () => {
   let precioTotal = 0;
   let articlesLS = getArticlesLS('articles');
+
+  //Vacia el carrito antes de volver a imprimir
   $('#section-carrito-articles').html('');
+
+  //Si no hay elementos en el carrito muestra un mensaje
   if (articlesLS.length == 0) {
-    $('#section-carrito-articles').append('<h1>No hay elementos en el carrito</h1>');
+    const text = $('<h3>').text('No hay elementos en el carrito.').css({
+      'font-family': 'Roboto Condensed',
+      color: '#d4cdcd',
+      'font-style': 'italic'
+    });
+    $('#section-carrito-articles').append(text);
   }
 
   articlesLS.forEach((article) => {
@@ -201,6 +210,17 @@ export const printArticlesCarrito = () => {
 
 export const printArticlesHistorial = () => {
   let articlesHistory = getArticlesLS('historial');
+
+  //Si no hay elementos en el historial muestra un mensaje
+  if (articlesHistory.length == 0) {
+    const text = $('<h3>').text('No hay articulos vistos.').css({
+      'font-family': 'Roboto Condensed',
+      color: '#d4cdcd',
+      'font-style': 'italic'
+    });
+    $('#section-historial-articles').append(text);
+  }
+
   let articlesHistorySR = removeRepetidos(articlesHistory);
 
   for (const article of articlesHistorySR) {
