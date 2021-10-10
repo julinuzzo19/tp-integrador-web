@@ -5,7 +5,8 @@ let charactersPopular = [
 ];
 for (const characterId of charactersPopular) {
   $.get({
-    url: `https://gateway.marvel.com:443/v1/public/characters/${characterId}?apikey=009e32091293e7d1531b865c1241db7f`,
+    url: `https://gateway.marvel.com:443/v1/public/characters/${characterId}?apikey=2c523a4771baadbb08e9b4ab27897220
+    `,
     success: (response) => {
       let articlesFounded = response.data.results;
 
@@ -21,7 +22,8 @@ for (const characterId of charactersPopular) {
 let seriesPopular = [27022, 24229, 24296, 28031, 24291, 29032, 30148, 28042];
 for (const serieId of seriesPopular) {
   $.get({
-    url: `https://gateway.marvel.com:443/v1/public/series/${serieId}?apikey=009e32091293e7d1531b865c1241db7f`,
+    url: `https://gateway.marvel.com:443/v1/public/series/${serieId}?apikey=2c523a4771baadbb08e9b4ab27897220
+    `,
     success: (response) => {
       let articlesFounded = response.data.results;
 
