@@ -1,5 +1,5 @@
 export const URL_API = 'https://gateway.marvel.com:443/v1/public/';
-export const API_KEY = 'apikey=2c523a4771baadbb08e9b4ab27897220';
+export const API_KEY = 'apikey=009e32091293e7d1531b865c1241db7f';
 export const URL_API_CHARACTERS = URL_API + 'characters?' + API_KEY;
 export const URL_API_CHARACTER_ID = URL_API + `characters/`;
 export const URL_API_SERIES = URL_API + 'series?' + API_KEY;
@@ -25,7 +25,9 @@ export const printArticle = (article, place) => {
     article.description =
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos earum labore minima id a, cumque voluptatum et totam.';
   }
+  //Reemplazar simbolos no permitidos en url
   article.description = article.description.replaceAll(/'/g, ' ');
+  article.description = article.description.replaceAll(/#/g, ' ');
 
   //print Series articulos
   if (article.category === 'serie') {

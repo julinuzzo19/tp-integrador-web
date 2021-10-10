@@ -1,134 +1,719 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Compartir</title>
-    <link rel="stylesheet" href="../assets/css/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.js"
-      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <nav role="navigation">
-      <div id="menuToggle">
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
-        <ul id="menu">
-          <li id="first-li"
-            ><a class="toggle-nav-a" href="search.html">Busqueda</a></li
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compartir</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <nav role="navigation">
+    <div id="menuToggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul id="menu">
+        <li id="first-li"><a class="toggle-nav-a" href="search.html">Busqueda</a></li>
+        <li><a class="toggle-nav-a" href="carrito.html#historial">Historial</a></li>
+        <li><a class="toggle-nav-a" href="#about">Sobre nosotros</a></li>
+
+        <li class="item-footer">
+          <svg width="130" height="52" xmlns="http://www.w3.org/2000/svg">
+            <rect fill="#EC1D24" width="100%" height="100%"></rect>
+            <path fill="#FEFEFE"
+              d="M126.222 40.059v7.906H111.58V4h7.885v36.059h6.757zm-62.564-14.5c-.61.294-1.248.44-1.87.442v-14.14h.04c.622-.005 5.264.184 5.264 6.993 0 3.559-1.58 5.804-3.434 6.705zM40.55 34.24l2.183-18.799 2.265 18.799H40.55zm69.655-22.215V4.007H87.879l-3.675 26.779-3.63-26.78h-8.052l.901 7.15c-.928-1.832-4.224-7.15-11.48-7.15-.047-.002-8.06 0-8.06 0l-.031 39.032-5.868-39.031-10.545-.005-6.072 40.44.002-40.435H21.278L17.64 26.724 14.096 4.006H4v43.966h7.95V26.78l3.618 21.192h4.226l3.565-21.192v21.192h15.327l.928-6.762h6.17l.927 6.762 15.047.008h.01v-.008h.02V33.702l1.845-.27 3.817 14.55h7.784l-.002-.01h.022l-5.011-17.048c2.538-1.88 5.406-6.644 4.643-11.203v-.002C74.894 19.777 79.615 48 79.615 48l9.256-.027 6.327-39.85v39.85h15.007v-7.908h-7.124v-10.08h7.124v-8.03h-7.124v-9.931h7.124z">
+            </path>
+            <path fill="#FEFEFE"
+              d="M31.5 48V4H21.291l-3.64 22.735L14.102 4H4v44h8V26.792L15.577 48h4.229l3.568-21.208V48z"></path>
+          </svg>
+        </li>
+        <li class="item-copyright-footer"><span>Todos los derechos reservados. &copy;</span></li>
+      </ul>
+    </div>
+    <div class="div-title-img">
+      <a href="../index.html" class="title-img-link"><img class="title-img" src="../assets/images/title-marvel.jpg"
+          alt="" /></a>
+    </div>
+
+    <div class="div-nav-cart">
+      <a href="carrito.html"><i class="fas fa-shopping-cart fa-2x"> </i></a>
+    </div>
+  </nav>
+
+  <main>
+    <aside id="custom_html-2" class="widget_text widget widget_custom_html">
+      <h3 class="widgettitle">Publicidad</h3>
+      <div class="textwidget custom-html-widget">
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&amp;adInstanceId=2f660f77-144e-4102-8188-59e34b04a964"></script>
+        <div id="amzn_assoc_ad_div_adunit0_0">
+          <div
+            id="amzn-native-ad-0"
+            class="amzn-native-container amzn-native-no-borders"
+            data-ad-meta="Native_Compact-auto"
+            style="display: block; width: auto"
           >
-          <li
-            ><a class="toggle-nav-a" href="carrito.html#historial">Historial</a></li
-          >
-          <li><a class="toggle-nav-a" href="#about">Sobre nosotros</a></li>
+            <div class="amzn-native-header">
+              <span class="amzn-native-header-text">Shop Related Products</span>
+              <div class="amzn-native-brand amzn-native-brand-top">
+                <span class="amzn-native-brand-content">
+                  <span class="amzn-native-brand-text">
+                    <a
+                      rel="nofollow"
+                      href="https://aax-us-east.amazon-adsystem.com/x/c/QtQOYovgZJ6mlcjjWc4y6KwAAAF8RA9y9QEAAAE0AU4DQsM/https://affiliate-program.amazon.com/home/ads/ref=sm_n_au_dka_AR_logo?adId=logo&amp;creativeASIN=logo&amp;linkId=e2384f06a50ac4f4a5838e9cd06f2152&amp;tag=grappoli-20&amp;linkCode=w41&amp;ref-refURL=https%3A%2F%2Fgraphicpolicy.com%2F&amp;slotNum=0&amp;imprToken=bbb24e95063fe8a8752841e00da3e554&amp;adType=smart&amp;adMode=auto&amp;adFormat=grid&amp;impressionTimestamp=1633229436212&amp;ac-ms-src=nsa-ads&amp;cid=nsa-ads"
+                      target="_blank"
+                      class="amzn-native-brand-link amzn-native-brand-logo-link"
+                    >
+                      Ads by Amazon
+                    </a>
+                    <a
+                      rel="nofollow"
+                      class="amzn-native-adchoices-link"
+                      href="https://aax-us-east.amazon-adsystem.com/x/c/QtQOYovgZJ6mlcjjWc4y6KwAAAF8RA9y9QEAAAE0AU4DQsM/https://www.amazon.com/adprefs/ref=sm_n_au_dka_AR_ac?tag=grappoli-20&amp;linkCode=w41"
+                      target="_blank"
+                      title="AdChoices"
+                    >
+                      <span class="amzn-sprite amzn-native-da-adchoices"></span>
+                    </a>
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="amzn-native-content amzn-native-content-adfeedback">
+              <div class="amzn-native-products-list">
+                <div
+                  class="amzn-native-product amzn-native-product-asin-container"
+                  data-item-type="ASIN"
+                  title="Wonder Woman"
+                  style="
+                    margin-left: 0px;
+                    width: 48.3193%;
+                    display: block;
+                    height: 223px;
+                  "
+                  tabindex="0"
+                >
+                  <div class="amzn-native-product-asin" style="display: block">
+                    <div tabindex="-1" class="amzn-native-product-image-container">
+                      <div>
+                        <img
+                          class="amzn-native-product-image"
+                          src="https://m.media-amazon.com/images/I/51USWZp95rL._AC_SL115_.jpg"
+                        />
+                      </div>
+                    </div>
+                    <div tabindex="-1" class="amzn-native-product-title-container">
+                      <a
+                        rel="nofollow"
+                        tabindex="-1"
+                        class="amzn-native-product-title"
+                        href="https://aax-us-east.amazon-adsystem.com/x/c/QtQOYovgZJ6mlcjjWc4y6KwAAAF8RA9y9QEAAAE0AU4DQsM/https://www.amazon.com/dp/B072FNHS9P/ref=sm_n_au_dka_AR_pr_con_0_0?adId=B072FNHS9P&amp;creativeASIN=B072FNHS9P&amp;linkId=e2384f06a50ac4f4a5838e9cd06f2152&amp;tag=grappoli-20&amp;linkCode=w41&amp;ref-refURL=https%3A%2F%2Fgraphicpolicy.com%2F&amp;slotNum=0&amp;imprToken=bbb24e95063fe8a8752841e00da3e554&amp;adType=smart&amp;adMode=auto&amp;adFormat=grid&amp;impressionTimestamp=1633229436195"
+                        target="_blank"
+                      >
+                        <span class="amzn-native-product-link-catcher"></span>
+                        <span class="amzn-native-product-title-text"
+                          >Wonder Woman</span
+                        >
+                      </a>
+                    </div>
+                    <div
+                      tabindex="-1"
+                      class="
+                        amzn-native-product-attr-container
+                        amzn-native-product-attr-container-full
+                      "
+                    >
+                      <div class="amzn-native-product-price">
+                        <span
+                          class="amzn-native-product-offer-price"
+                          style="display: inline-block"
+                          >$14.99</span
+                        >
+                        <span
+                          class="amzn-native-product-list-price"
+                          style="display: none"
+                        ></span>
+                        <span
+                          class="
+                            amzn-sprite
+                            amzn-native-product-prime
+                            amzn-native-product-prime-inline-with-price
+                          "
+                          style="display: none"
+                        ></span>
+                      </div>
+                      <div
+                        class="amzn-native-product-bs-highlight"
+                        style="display: none"
+                      >
+                        <span class="amzn-native-product-bs-text">Bestseller</span>
+                      </div>
+                      <div
+                        class="amzn-native-product-rating below-price"
+                        style="display: block"
+                      >
+                        <span class="amzn-native-product-stars-holder amzn-sprite">
+                          <span
+                            class="amzn-native-product-stars amzn-sprite"
+                            style="width: 92%"
+                          ></span>
+                        </span>
+                        <span class="amzn-native-product-review-count"
+                          >(41403)</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="amzn-native-product-deal">
+                    <div tabindex="-1" class="amzn-native-product-image-container">
+                      <div>
+                        <img class="amzn-native-product-image" />
+                      </div>
+                    </div>
 
-          <li class="item-footer">
-            <svg width="130" height="52" xmlns="http://www.w3.org/2000/svg">
-              <rect fill="#EC1D24" width="100%" height="100%"></rect>
-              <path
-                fill="#FEFEFE"
-                d="M126.222 40.059v7.906H111.58V4h7.885v36.059h6.757zm-62.564-14.5c-.61.294-1.248.44-1.87.442v-14.14h.04c.622-.005 5.264.184 5.264 6.993 0 3.559-1.58 5.804-3.434 6.705zM40.55 34.24l2.183-18.799 2.265 18.799H40.55zm69.655-22.215V4.007H87.879l-3.675 26.779-3.63-26.78h-8.052l.901 7.15c-.928-1.832-4.224-7.15-11.48-7.15-.047-.002-8.06 0-8.06 0l-.031 39.032-5.868-39.031-10.545-.005-6.072 40.44.002-40.435H21.278L17.64 26.724 14.096 4.006H4v43.966h7.95V26.78l3.618 21.192h4.226l3.565-21.192v21.192h15.327l.928-6.762h6.17l.927 6.762 15.047.008h.01v-.008h.02V33.702l1.845-.27 3.817 14.55h7.784l-.002-.01h.022l-5.011-17.048c2.538-1.88 5.406-6.644 4.643-11.203v-.002C74.894 19.777 79.615 48 79.615 48l9.256-.027 6.327-39.85v39.85h15.007v-7.908h-7.124v-10.08h7.124v-8.03h-7.124v-9.931h7.124z"
-              ></path>
-              <path
-                fill="#FEFEFE"
-                d="M31.5 48V4H21.291l-3.64 22.735L14.102 4H4v44h8V26.792L15.577 48h4.229l3.568-21.208V48z"
-              ></path>
-            </svg>
-          </li>
-          <li class="item-copyright-footer"
-            ><span>Todos los derechos reservados. &copy;</span></li
-          >
-        </ul>
-      </div>
-      <div class="div-title-img">
-        <a href="../index.html" class="title-img-link"
-          ><img class="title-img" src="../assets/images/title-marvel.jpg" alt=""
-        /></a>
-      </div>
+                    <div class="amzn-native-product-price">
+                      <span class="amzn-native-product-offer-price"></span>
+                      <span class="amzn-native-percent-off"></span>
+                    </div>
 
-      <div class="div-nav-cart">
-        <a href="carrito.html"><i class="fas fa-shopping-cart fa-2x"> </i></a>
-      </div>
-    </nav>
+                    <div tabindex="-1" class="amzn-native-product-title-container">
+                      <a
+                        rel="nofollow"
+                        tabindex="-1"
+                        class="amzn-native-product-title"
+                        href="https://aax-us-east.amazon-adsystem.com/x/c/QtQOYovgZJ6mlcjjWc4y6KwAAAF8RA9y9QEAAAE0AU4DQsM/https://graphicpolicy.com/?gclid=CjwKCAjwhuCKBhADEiwA1HegOcws1gGLzFg87mRxg2hxIFoe1SVrq8xk0MiZAFKMTy7PM0yAqJM1TRoC2ZUQAvD_BwE#"
+                        target="_blank"
+                      >
+                        <span class="amzn-native-product-link-catcher"></span>
+                        <span class="amzn-native-product-title-text"></span>
+                      </a>
+                    </div>
+                    <div
+                      tabindex="-1"
+                      class="
+                        amzn-native-product-attr-container
+                        amzn-native-product-attr-container-full
+                      "
+                    >
+                      <div class="amzn-native-product-deal-attr-container">
+                        <div class="amzn-native-product-deal-badge"
+                          >DEAL OF THE DAY</div
+                        >
+                        <div class="amzn-native-product-deal-badge-skew"></div>
 
-    <main>
-      <div class="container">
-        <section>
-          <h2 class="subtitle">Compartir</h2>
+                        <div class="amzn-native-product-deal-timer-container">
+                          ENDS IN
+                          <div class="amzn-native-product-deal-timer"></div>
+                        </div>
+                      </div>
 
-          <form id="form-mail">
-            <label for="">Nombre del articulo</label>
-            <input id="nombre-article-compartido" type="text" />
+                      <div class="amzn-native-product-rating">
+                        <span class="amzn-native-product-stars-holder amzn-sprite">
+                          <span
+                            class="amzn-native-product-stars amzn-sprite"
+                          ></span>
+                        </span>
+                        <span class="amzn-native-product-review-count"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="amzn-native-product amzn-native-product-asin-container"
+                  data-item-type="ASIN"
+                  title="September 30, 1955"
+                  style="
+                    margin-left: 3.36134%;
+                    width: 48.3193%;
+                    display: block;
+                    height: 223px;
+                  "
+                  tabindex="0"
+                >
+                  <div class="amzn-native-product-asin" style="display: block">
+                    <div tabindex="-1" class="amzn-native-product-image-container">
+                      <div>
+                        <img
+                          class="amzn-native-product-image"
+                          src="https://m.media-amazon.com/images/I/51U8cK+zlhL._AC_SL115_.jpg"
+                        />
+                      </div>
+                    </div>
+                    <div tabindex="-1" class="amzn-native-product-title-container">
+                      <a
+                        rel="nofollow"
+                        tabindex="-1"
+                        class="amzn-native-product-title"
+                        href="https://aax-us-east.amazon-adsystem.com/x/c/QtQOYovgZJ6mlcjjWc4y6KwAAAF8RA9y9QEAAAE0AU4DQsM/https://www.amazon.com/dp/B0088WG2WC/ref=sm_n_au_dka_AR_pr_con_0_1?adId=B0088WG2WC&amp;creativeASIN=B0088WG2WC&amp;linkId=e2384f06a50ac4f4a5838e9cd06f2152&amp;tag=grappoli-20&amp;linkCode=w41&amp;ref-refURL=https%3A%2F%2Fgraphicpolicy.com%2F&amp;slotNum=0&amp;imprToken=bbb24e95063fe8a8752841e00da3e554&amp;adType=smart&amp;adMode=auto&amp;adFormat=grid&amp;impressionTimestamp=1633229436198"
+                        target="_blank"
+                      >
+                        <span class="amzn-native-product-link-catcher"></span>
+                        <span class="amzn-native-product-title-text"
+                          >September 30, 1955</span
+                        >
+                      </a>
+                    </div>
+                    <div
+                      tabindex="-1"
+                      class="
+                        amzn-native-product-attr-container
+                        amzn-native-product-attr-container-full
+                      "
+                    >
+                      <div class="amzn-native-product-price">
+                        <span
+                          class="amzn-native-product-offer-price"
+                          style="display: inline-block"
+                          >$3.99</span
+                        >
+                        <!--
+                                                                          --><span
+                          class="amzn-native-product-list-price"
+                          style="display: none"
+                        ></span>
+                        <!--
+                                                                                                          --><span
+                          class="
+                            amzn-sprite
+                            amzn-native-product-prime
+                            amzn-native-product-prime-inline-with-price
+                          "
+                          style="display: none"
+                        ></span>
+                        <!--
+                                                                                                      -->
+                      </div>
+                      <div
+                        class="amzn-native-product-bs-highlight"
+                        style="display: none"
+                      >
+                        <span class="amzn-native-product-bs-text">Bestseller</span>
+                      </div>
+                      <div
+                        class="amzn-native-product-rating below-price"
+                        style="display: block"
+                      >
+                        <span class="amzn-native-product-stars-holder amzn-sprite">
+                          <span
+                            class="amzn-native-product-stars amzn-sprite"
+                            style="width: 80%"
+                          ></span>
+                        </span>
+                        <span class="amzn-native-product-review-count">(34)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="amzn-native-product-deal">
+                    <div tabindex="-1" class="amzn-native-product-image-container">
+                      <div>
+                        <img class="amzn-native-product-image" />
+                      </div>
+                    </div>
 
-            <img id="img-article-compartido" src="" alt="" />
+                    <div class="amzn-native-product-price">
+                      <span class="amzn-native-product-offer-price"></span>
+                      <span class="amzn-native-percent-off"></span>
+                    </div>
 
-            <label for="emisor">Correo emisor: </label
-            ><input id="emisor" type="text" />
-            <label for="receptor">Correo destino: </label
-            ><input id="receptor" type="text" />
-<br><br>
-            <label for="mensaje-compartir">Mensaje</label>
-            <br> 
-            <textarea id="mensaje-compartir" cols="20" rows="5"></textarea>
-<br> 
-            <button type="submit" id="btn-form">Compartir</button>
-          </form>
-        </section>
-      </div>
-    </main>
+                    <div tabindex="-1" class="amzn-native-product-title-container">
+                      <a
+                        rel="nofollow"
+                        tabindex="-1"
+                        class="amzn-native-product-title"
+                        href="https://aax-us-east.amazon-adsystem.com/x/c/QtQOYovgZJ6mlcjjWc4y6KwAAAF8RA9y9QEAAAE0AU4DQsM/https://graphicpolicy.com/?gclid=CjwKCAjwhuCKBhADEiwA1HegOcws1gGLzFg87mRxg2hxIFoe1SVrq8xk0MiZAFKMTy7PM0yAqJM1TRoC2ZUQAvD_BwE#"
+                        target="_blank"
+                      >
+                        <span class="amzn-native-product-link-catcher"></span>
+                        <span class="amzn-native-product-title-text"></span>
+                      </a>
+                    </div>
 
-    <footer class="footer" id="about">
-      <div class="container-footer">
-        <span class="span-footer">Siguenos en nuestras redes</span>
-        <div class="div-redes-icons">
-          <a href="https://www.facebook.com/MarvelLatinoamerica/">
-            <i class="fab fa-facebook fa-2x" aria-hidden="true"></i>
-          </a>
-          <a href="https://twitter.com/marvellatam">
-            <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
-          </a>
-          <a href="https://www.instagram.com/marvellatam/">
-            <i class="fab fa-instagram fa-2x" aria-hidden="true"></i>
-          </a>
-          <a href="https://www.youtube.com/c/MarvelLatino">
-            <i class="fab fa-youtube fa-2x" aria-hidden="true"></i>
-          </a>
+                    <div
+                      tabindex="-1"
+                      class="
+                        amzn-native-product-attr-container
+                        amzn-native-product-attr-container-full
+                      "
+                    >
+                      <div class="amzn-native-product-deal-attr-container">
+                        <div class="amzn-native-product-deal-badge"
+                          >DEAL OF THE DAY</div
+                        >
+                        <div class="amzn-native-product-deal-badge-skew"></div>
+
+                        <div class="amzn-native-product-deal-timer-container">
+                          ENDS IN
+                          <div class="amzn-native-product-deal-timer"></div>
+                        </div>
+                      </div>
+
+                      <div class="amzn-native-product-rating">
+                        <span class="amzn-native-product-stars-holder amzn-sprite">
+                          <span
+                            class="amzn-native-product-stars amzn-sprite"
+                          ></span>
+                        </span>
+                        <span class="amzn-native-product-review-count"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="amzn-native-product-concept">
+                    <div tabindex="1" class="amzn-native-product-image-container">
+                      <div class="amzn-native-concept-image"> </div>
+                    </div>
+                    <div tabindex="-1" class="amzn-native-product-title-container">
+                      <a
+                        rel="nofollow"
+                        tabindex="-1"
+                        class="amzn-native-product-title"
+                        href="https://aax-us-east.amazon-adsystem.com/x/c/QtQOYovgZJ6mlcjjWc4y6KwAAAF8RA9y9QEAAAE0AU4DQsM/https://graphicpolicy.com/?gclid=CjwKCAjwhuCKBhADEiwA1HegOcws1gGLzFg87mRxg2hxIFoe1SVrq8xk0MiZAFKMTy7PM0yAqJM1TRoC2ZUQAvD_BwE#"
+                        target="_blank"
+                      >
+                        <span class="amzn-native-product-link-catcher"></span>
+                        <span class="amzn-native-product-title-text"></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="amzn-native-product amzn-native-product-asin-container"
+                  data-item-type="ASIN"
+                  title="Marvel Studios' Avengers: Endgame"
+                  style="
+                    margin-left: 0px;
+                    width: 48.3193%;
+                    display: block;
+                    height: 223px;
+                  "
+                  tabindex="0"
+                >
+                  <div class="amzn-native-product-asin" style="display: block">
+                    <div tabindex="-1" class="amzn-native-product-image-container">
+                      <div>
+                        <img
+                          class="amzn-native-product-image"
+                          src="https://m.media-amazon.com/images/I/51mkoxizT2L._AC_SL115_.jpg"
+                        />
+                      </div>
+                    </div>
+                    <div tabindex="-1" class="amzn-native-product-title-container">
+                      <a
+                        rel="nofollow"
+                        tabindex="-1"
+                        class="amzn-native-product-title"
+                        href="https://aax-us-east.amazon-adsystem.com/x/c/QtQOYovgZJ6mlcjjWc4y6KwAAAF8RA9y9QEAAAE0AU4DQsM/https://www.amazon.com/dp/B07R21NC3J/ref=sm_n_au_dka_AR_pr_con_1_0?adId=B07R21NC3J&amp;creativeASIN=B07R21NC3J&amp;linkId=e2384f06a50ac4f4a5838e9cd06f2152&amp;tag=grappoli-20&amp;linkCode=w41&amp;ref-refURL=https%3A%2F%2Fgraphicpolicy.com%2F&amp;slotNum=0&amp;imprToken=bbb24e95063fe8a8752841e00da3e554&amp;adType=smart&amp;adMode=auto&amp;adFormat=grid&amp;impressionTimestamp=1633229436202"
+                        target="_blank"
+                      >
+                        <span class="amzn-native-product-link-catcher"></span>
+                        <span class="amzn-native-product-title-text"
+                          >Marvel Studios' Avengers: Endgame</span
+                        >
+                      </a>
+                    </div>
+                    <div
+                      tabindex="-1"
+                      class="
+                        amzn-native-product-attr-container
+                        amzn-native-product-attr-container-full
+                      "
+                    >
+                      <div class="amzn-native-product-price">
+                        <span
+                          class="amzn-native-product-offer-price"
+                          style="display: inline-block"
+                          >$19.99</span
+                        >
+                        <span
+                          class="amzn-native-product-list-price"
+                          style="display: none"
+                        ></span>
+                        <span
+                          class="
+                            amzn-sprite
+                            amzn-native-product-prime
+                            amzn-native-product-prime-inline-with-price
+                          "
+                          style="display: none"
+                        ></span>
+                      </div>
+                      <div
+                        class="amzn-native-product-bs-highlight"
+                        style="display: none"
+                      >
+                        <span class="amzn-native-product-bs-text">Bestseller</span>
+                      </div>
+                      <div
+                        class="amzn-native-product-rating below-price"
+                        style="display: block"
+                      >
+                        <span class="amzn-native-product-stars-holder amzn-sprite">
+                          <span
+                            class="amzn-native-product-stars amzn-sprite"
+                            style="width: 96%"
+                          ></span>
+                        </span>
+                        <span class="amzn-native-product-review-count"
+                          >(36191)</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="amzn-native-product amzn-native-product-asin-container"
+                  data-item-type="ASIN"
+                  title="Wonder"
+                  style="
+                    margin-left: 3.36134%;
+                    width: 48.3193%;
+                    display: block;
+                    height: 223px;
+                  "
+                  tabindex="0"
+                >
+                  <div class="amzn-native-product-asin" style="display: block">
+                    <div tabindex="-1" class="amzn-native-product-image-container">
+                      <div>
+                        <img
+                          class="amzn-native-product-image"
+                          src="https://m.media-amazon.com/images/I/41y02e5hqyL._AC_SL115_.jpg"
+                        />
+                      </div>
+                    </div>
+                    <div tabindex="-1" class="amzn-native-product-title-container">
+                      <a
+                        rel="nofollow"
+                        tabindex="-1"
+                        class="amzn-native-product-title"
+                        href="https://aax-us-east.amazon-adsystem.com/x/c/QtQOYovgZJ6mlcjjWc4y6KwAAAF8RA9y9QEAAAE0AU4DQsM/https://www.amazon.com/dp/B0786YMWXR/ref=sm_n_au_dka_AR_pr_con_1_1?adId=B0786YMWXR&amp;creativeASIN=B0786YMWXR&amp;linkId=e2384f06a50ac4f4a5838e9cd06f2152&amp;tag=grappoli-20&amp;linkCode=w41&amp;ref-refURL=https%3A%2F%2Fgraphicpolicy.com%2F&amp;slotNum=0&amp;imprToken=bbb24e95063fe8a8752841e00da3e554&amp;adType=smart&amp;adMode=auto&amp;adFormat=grid&amp;impressionTimestamp=1633229436206"
+                        target="_blank"
+                      >
+                        <span class="amzn-native-product-link-catcher"></span>
+                        <span class="amzn-native-product-title-text">Wonder</span>
+                      </a>
+                    </div>
+                    <div
+                      tabindex="-1"
+                      class="
+                        amzn-native-product-attr-container
+                        amzn-native-product-attr-container-full
+                      "
+                    >
+                      <div class="amzn-native-product-price">
+                        <span
+                          class="amzn-native-product-offer-price"
+                          style="display: inline-block"
+                          >$12.99</span
+                        >
+                        <span
+                          class="amzn-native-product-list-price"
+                          style="display: none"
+                        ></span>
+                        <span
+                          class="
+                            amzn-sprite
+                            amzn-native-product-prime
+                            amzn-native-product-prime-inline-with-price
+                          "
+                          style="display: none"
+                        ></span>
+                      </div>
+                      <div
+                        class="amzn-native-product-bs-highlight"
+                        style="display: none"
+                      >
+                        <span class="amzn-native-product-bs-text">Bestseller</span>
+                      </div>
+                      <div
+                        class="amzn-native-product-rating below-price"
+                        style="display: block"
+                      >
+                        <span class="amzn-native-product-stars-holder amzn-sprite">
+                          <span
+                            class="amzn-native-product-stars amzn-sprite"
+                            style="width: 96%"
+                          ></span>
+                        </span>
+                        <span class="amzn-native-product-review-count"
+                          >(19495)</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="amzn-native-product-deal">
+                    <div class="amzn-native-product-price">
+                      <span class="amzn-native-product-offer-price"></span>
+                      <span class="amzn-native-percent-off"></span>
+                    </div>
+                    <div tabindex="-1" class="amzn-native-product-title-container">
+                      <a
+                        rel="nofollow"
+                        tabindex="-1"
+                        class="amzn-native-product-title"
+                        href="https://aax-us-east.amazon-adsystem.com/x/c/QtQOYovgZJ6mlcjjWc4y6KwAAAF8RA9y9QEAAAE0AU4DQsM/https://graphicpolicy.com/?gclid=CjwKCAjwhuCKBhADEiwA1HegOcws1gGLzFg87mRxg2hxIFoe1SVrq8xk0MiZAFKMTy7PM0yAqJM1TRoC2ZUQAvD_BwE#"
+                        target="_blank"
+                      >
+                        <span class="amzn-native-product-link-catcher"></span>
+                        <span class="amzn-native-product-title-text"></span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="amzn-native-product-concept">
+                    <div tabindex="1" class="amzn-native-product-image-container">
+                      <div class="amzn-native-concept-image"> </div>
+                    </div>
+                    <div tabindex="-1" class="amzn-native-product-title-container">
+                      <a
+                        rel="nofollow"
+                        tabindex="-1"
+                        class="amzn-native-product-title"
+                        href="https://aax-us-east.amazon-adsystem.com/x/c/QtQOYovgZJ6mlcjjWc4y6KwAAAF8RA9y9QEAAAE0AU4DQsM/https://graphicpolicy.com/?gclid=CjwKCAjwhuCKBhADEiwA1HegOcws1gGLzFg87mRxg2hxIFoe1SVrq8xk0MiZAFKMTy7PM0yAqJM1TRoC2ZUQAvD_BwE#"
+                        target="_blank"
+                      >
+                        <span class="amzn-native-product-link-catcher"></span>
+                        <span class="amzn-native-product-title-text"></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="amzn-sprite amzn-native-carousel-rightarrow"></div>
+            </div>
+
+            <div class="amzn-native-brand amzn-native-brand-bottom">
+              <span class="amzn-native-brand-content">
+                <span class="amzn-native-brand-text">
+                  <a
+                    rel="nofollow"
+                    href="https://aax-us-east.amazon-adsystem.com/x/c/QtQOYovgZJ6mlcjjWc4y6KwAAAF8RA9y9QEAAAE0AU4DQsM/https://affiliate-program.amazon.com/home/ads/ref=sm_n_au_dka_AR_logo?adId=logo&amp;creativeASIN=logo&amp;linkId=e2384f06a50ac4f4a5838e9cd06f2152&amp;tag=grappoli-20&amp;linkCode=w41&amp;ref-refURL=https%3A%2F%2Fgraphicpolicy.com%2F&amp;slotNum=0&amp;imprToken=bbb24e95063fe8a8752841e00da3e554&amp;adType=smart&amp;adMode=auto&amp;adFormat=grid&amp;impressionTimestamp=1633229436213&amp;ac-ms-src=nsa-ads&amp;cid=nsa-ads"
+                    target="_blank"
+                    class="amzn-native-brand-link amzn-native-brand-logo-link"
+                  >
+                    Ads by Amazon
+                  </a>
+                  <a
+                    rel="nofollow"
+                    class="amzn-native-adchoices-link"
+                    href="https://aax-us-east.amazon-adsystem.com/x/c/QtQOYovgZJ6mlcjjWc4y6KwAAAF8RA9y9QEAAAE0AU4DQsM/https://www.amazon.com/adprefs/ref=sm_n_au_dka_AR_ac?tag=grappoli-20&amp;linkCode=w41"
+                    target="_blank"
+                    title="AdChoices"
+                  >
+                    <span class="amzn-sprite amzn-native-da-adchoices"></span>
+                  </a>
+                </span>
+              </span>
+            </div>
+          </div>
         </div>
-        <div class="div-ubicacion">
-          <span class="span-footer">Ubicación </span>
-          <i class="fas fa-map-marker-alt fa-2x"></i>
-        </div>
-        <iframe
-          class="map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.3473592943365!2d-57.95844418518356!3d-34.922824381958264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e62dd769b9d7%3A0x8e5a62b28764b5ef!2sCatedral%20de%20La%20Plata!5e0!3m2!1ses-419!2sar!4v1633041546110!5m2!1ses-419!2sar"
-          width="300"
-          height="200"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-        ></iframe>
-        <h1 className="list-unstyled">
-          <li>342-420-6969</li>
-          <li>Bs AS, La Plata</li>
-          <li>Argentina</li>
-        </h1>
-        <span class="autor-footer">Powered by: Nuzzo Julián, Octavio Jorge</span>
       </div>
-    </footer>
-  </body>
-  <script type="module" src="../js/compartir.js"></script>
+      <div
+        id="media_image-2"
+        class="
+          widget-odd widget-first widget-1
+          mrf-banner
+          widget
+          penci-block-vc penci-widget-sidebar
+          style-title-1 style-title-left
+          widget_media_image
+        "
+      >
+        <a
+          href="https://milcomics.com/comics-manga-y-libros/marvel-comics-1000-portada-especial-milcomics"
+          data-wpel-link="external"
+          target="_self"
+          rel="nofollow noopener noreferrer"
+        >
+          <img
+            class="ad-img"
+            src="https://www.cinemascomics.com/wp-content/uploads/2017/11/comprar-marvel-comics.jpg"
+            alt="comprar marvel cómics en Milcomics"
+            class="lazyloaded"
+            data-ll-status="loaded"
+          />
+        </a>
+      </div>
+    </aside>
+    <div class="container">
+      <section>
+        <h2 class="subtitle">Compartir</h2>
+
+        <form id="form-mail">
+          <div class="container-form">
+            <fieldset>
+              <legend>Articulo a compartir</legend>
+              <div class="div-datos-article">
+                <img id="img-article-compartido" src="" alt="" />
+                <label for="">Nombre del articulo</label>
+                <input id="nombre-article-compartido" type="text" />
+
+                <label for="article-description">Descripción del artículo</label>
+                <textarea id="article-description" cols="40" rows="5"></textarea>
+
+
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Datos de envío</legend>
+              <div class="div-datos-envio">
+                <label for="emisor">Correo emisor: </label><input id="emisor" type="text" />
+                <label for="receptor">Correo destino: </label><input id="receptor" type="text" />
+
+                <label for="mensaje-compartir">Mensaje</label>
+
+                <textarea id="mensaje-compartir" cols="20" rows="5"></textarea>
+              </div>
+            </fieldset>
+          </div>
+          <div class="div-buttons">
+            <button type="submit">Cancelar</button>
+          <button type="submit" id="btn-form">Enviar mail</button>
+        </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer" id="about">
+    <div class="container-footer">
+      <span class="span-footer">Siguenos en nuestras redes</span>
+      <div class="div-redes-icons">
+        <a href="https://www.facebook.com/MarvelLatinoamerica/">
+          <i class="fab fa-facebook fa-2x" aria-hidden="true"></i>
+        </a>
+        <a href="https://twitter.com/marvellatam">
+          <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.instagram.com/marvellatam/">
+          <i class="fab fa-instagram fa-2x" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.youtube.com/c/MarvelLatino">
+          <i class="fab fa-youtube fa-2x" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="div-ubicacion">
+        <span class="span-footer">Ubicación </span>
+        <i class="fas fa-map-marker-alt fa-2x"></i>
+      </div>
+      <iframe class="map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.3473592943365!2d-57.95844418518356!3d-34.922824381958264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e62dd769b9d7%3A0x8e5a62b28764b5ef!2sCatedral%20de%20La%20Plata!5e0!3m2!1ses-419!2sar!4v1633041546110!5m2!1ses-419!2sar"
+        width="300" height="200" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+      <h1 className="list-unstyled">
+        <li>342-420-6969</li>
+        <li>Bs AS, La Plata</li>
+        <li>Argentina</li>
+      </h1>
+      <span class="autor-footer">Powered by: Nuzzo Julián, Octavio Jorge</span>
+    </div>
+  </footer>
+</body>
+<script type="module" src="../js/compartir.js"></script>
+
 </html>
