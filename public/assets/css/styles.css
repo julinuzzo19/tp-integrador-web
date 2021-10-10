@@ -132,6 +132,20 @@ nav {
 .article-series div p {
   margin: 0;
 }
+
+.fa-map-marker-alt{
+  color: rgb(9, 99, 1);
+}
+.fa-phone-alt{
+  color: rgb(9, 99, 1);
+}
+.fa-envelope{
+  color: rgb(9, 99, 1);
+}
+.text{
+  color: white;
+
+}
 /* FIN Section and articles */
 
 /* Footer */
@@ -684,3 +698,4 @@ ul {
     opacity: 0;
   }
 }
+
