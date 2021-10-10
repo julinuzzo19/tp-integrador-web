@@ -7,6 +7,15 @@ export const URL_API_SERIE_ID = URL_API + 'series/';
 
 // Metodo para imprimir por pantalla
 export const printArticle = (article, place) => {
+  // Cortar titulo
+  if (article.title) {
+    article.title = article.title.substr(0, article.title.indexOf('('));
+  } else {
+    if (article.name.indexOf('(') != -1) {
+      article.name = article.name.substr(0, article.name.indexOf('('));
+    }
+  }
+
   //Completa la descripcion si esta vacia
   if (article.description === null) {
     article.description =
@@ -18,20 +27,20 @@ export const printArticle = (article, place) => {
   if (article.category === 'serie') {
     $(place).append(`
       <article class="article-series" id="${article.id}">
-       <img id="img-${article.id}"
-         src="${article.thumbnail.path}/portrait_medium.jpg"
-         class="img-article"
-       />
-       <div>
-         <p>
-          ${article.title}
-           <br />
-           <small class="price-serie">$${article.price}</small>
-           <i class="fas fa-share-alt-square style-black" onclick="window.location.href='../pages/compartir.html?name=${article.title}&description=${article.description}&image=${article.thumbnail.path}/portrait_medium.jpg&price=${article.price}'"></i>
-           <i id="carrito-${article.id}" class="fas fa-shopping-cart style-black"></i>
-         </p>
-       </div>
-     </article>`);
+        <img id="img-${article.id}" src="${article.thumbnail.path}/portrait_medium.jpg" class="img-article" />
+        <div class="div-article-desc">
+          <p>
+            ${article.title}
+          </p>    
+          
+        <div class="article-div-buttons">   
+          <i class="fas fa-share-alt-square  style-black"
+            onclick="window.location.href='../pages/compartir.html?name=${article.title}&description=${article.description}&image=${article.thumbnail.path}/portrait_medium.jpg&price=${article.price}'"></i>
+            <small class="price-serie">$${article.price}</small>
+            <i id="carrito-${article.id}" class="fas fa-shopping-cart  style-black"></i>
+        </div>
+        </div>
+      </article>`);
   }
   //print personajes articulos
   else if (article.category === 'character') {

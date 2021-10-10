@@ -48,30 +48,6 @@ nav {
 }
 /*  */
 
-/* Desc articles */
-.fa-shopping-cart {
-  color: white;
-}
-/* Share */
-.fa-share-alt-square {
-  color: white;
-  font-size: x-large;
-}
-
-.fa-trash {
-  color: white;
-
-}
-
-.style-black {
-  color: black !important;
-}
-.price-serie {
-}
-.price-personaje {
-  color: white;
-}
-
 /* Section and articles */
 .container {
   padding: 0 6px 0 6px;
@@ -120,32 +96,78 @@ nav {
   color: white;
   font-family: 'Roboto Condensed', sans-serif;
 }
+.price-personaje {
+  color: white;
+}
 
 /* Articles Serie */
 .article-series {
   background-color: white;
   width: 45%;
-  height: 240px;
+  height: 250px;
   margin: 6px;
   margin-bottom: 10px;
+  border: #000 solid 2px;
 }
-.article-series div p {
+.article-series p {
+  font-family: 'Roboto Condensed';
+  font-weight: bold;
+  /* font-size: medium; */
+  text-align: center;
   margin: 0;
-}
 
-.fa-map-marker-alt{
+
+
+}
+.fa-map-marker-alt {
   color: rgb(9, 99, 1);
 }
-.fa-phone-alt{
+.fa-phone-alt {
   color: rgb(9, 99, 1);
 }
-.fa-envelope{
+.fa-envelope {
   color: rgb(9, 99, 1);
 }
-.text{
+.text {
   color: white;
 
 }
+.div-article-desc {
+}
+.article-div-buttons {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  justify-items: center;
+  align-items: center;
+}
+.price-serie {
+  font-family: 'Roboto Condensed';
+  font-size: larger;
+  font-weight: bolder;
+}
+.article-series .fa-share-alt-square {
+}
+.article-series .fa-shopping-cart {
+}
+
+/* Desc articles */
+.fa-shopping-cart {
+  color: white;
+}
+/* Share */
+.fa-share-alt-square {
+  color: white;
+  font-size: x-large;
+}
+
+.fa-trash {
+  color: white;
+  order: 3;
+}
+.style-black {
+  color: black !important;
+}
+
 /* FIN Section and articles */
 
 /* Footer */
@@ -580,7 +602,7 @@ ul {
   .article-series {
     background-color: white;
     width: 20%;
-    height: 240px;
+    height: 250px;
     margin: 6px;
     margin-bottom: 10px;
   }
@@ -698,4 +720,3 @@ ul {
     opacity: 0;
   }
 }
-
