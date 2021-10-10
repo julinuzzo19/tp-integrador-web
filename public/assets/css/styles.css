@@ -64,7 +64,7 @@ nav {
 .article-personajes {
   background-color: black;
   width: 45%;
-  height: 240px;
+  height: 248px;
   margin: 6px;
   margin-bottom: 10px;
   position: relative;
@@ -95,16 +95,38 @@ nav {
   margin: 6px 0 0 5px;
   color: white;
   font-family: 'Roboto Condensed', sans-serif;
+  text-align: center;
 }
 .price-personaje {
   color: white;
+  font-family: 'Roboto Condensed';
+  font-size: larger;
+  font-weight: bolder;
+  text-align: center;
+}
+.article-personajes .article-div-buttons button {
+  background: #fff;
+}
+.article-personajes .fa-shopping-cart {
+  color: black;
+}
+.article-personajes .fa-share-alt {
+  color: black;
+}
+.article-personajes .fa-trash{
+  color: black;
+}
+.article-personajes .article-div-buttons button {
+  background: #fff;
+  height: 30px;
+  width: 40px;
 }
 
 /* Articles Serie */
 .article-series {
   background-color: white;
   width: 45%;
-  height: 250px;
+  height: 245px;
   margin: 6px;
   margin-bottom: 10px;
   border: #000 solid 2px;
@@ -112,12 +134,8 @@ nav {
 .article-series p {
   font-family: 'Roboto Condensed';
   font-weight: bold;
-  /* font-size: medium; */
   text-align: center;
   margin: 0;
-
-
-
 }
 .fa-map-marker-alt {
   color: rgb(9, 99, 1);
@@ -130,24 +148,25 @@ nav {
 }
 .text {
   color: white;
-
-}
-.div-article-desc {
 }
 .article-div-buttons {
   display: grid;
   grid-template-columns: 33% 33% 33%;
   justify-items: center;
   align-items: center;
+  margin-top: 3px;
 }
+
+.article-series .article-div-buttons button {
+  background: #000;
+  height: 30px;
+  width: 40px;
+}
+
 .price-serie {
   font-family: 'Roboto Condensed';
   font-size: larger;
   font-weight: bolder;
-}
-.article-series .fa-share-alt-square {
-}
-.article-series .fa-shopping-cart {
 }
 
 /* Desc articles */
@@ -155,11 +174,12 @@ nav {
   color: white;
 }
 /* Share */
-.fa-share-alt-square {
+.fa-share-alt {
   color: white;
-  font-size: x-large;
 }
-
+.article-series .fa-check {
+  color: white;
+}
 .fa-trash {
   color: white;
   order: 3;
@@ -565,7 +585,7 @@ ul {
   .article-personajes {
     background-color: black;
     width: 20%;
-    height: 250px;
+    height: 255px;
     margin: 6px;
     margin-bottom: 10px;
     position: relative;
@@ -583,19 +603,6 @@ ul {
     width: 100%;
     height: 30vh;
     border-bottom: white solid 3px;
-  }
-  .article-personajes .price-article {
-    color: white;
-    align-self: end;
-    margin-left: 10px;
-    font-weight: bold;
-    font-size: 18px;
-  }
-  .article-personajes .desc-article {
-    font-weight: bolder;
-    margin: 6px 0 0 5px;
-    color: white;
-    font-family: 'Roboto Condensed', sans-serif;
   }
 
   /* Articles Serie */

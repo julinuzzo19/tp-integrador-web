@@ -9,10 +9,14 @@ export const URL_API_SERIE_ID = URL_API + 'series/';
 export const printArticle = (article, place) => {
   // Cortar titulo
   if (article.title) {
-    article.title = article.title.substr(0, article.title.indexOf('('));
+    if (article.title.indexOf('(') != -1) {
+      article.title = article.title.substr(0, article.title.indexOf('('));
+    }
   } else {
     if (article.name.indexOf('(') != -1) {
       article.name = article.name.substr(0, article.name.indexOf('('));
+    } else {
+      $('');
     }
   }
 
@@ -29,15 +33,15 @@ export const printArticle = (article, place) => {
       <article class="article-series" id="${article.id}">
         <img id="img-${article.id}" src="${article.thumbnail.path}/portrait_medium.jpg" class="img-article" />
         <div class="div-article-desc">
-          <p>
+          <p id="p-${article.id}" style=" text-overflow: ellipsis !IMPORTANT;
+          white-space: nowrap;
+          overflow: hidden;">
             ${article.title}
-          </p>    
-          
+          </p>         
         <div class="article-div-buttons">   
-          <i class="fas fa-share-alt-square  style-black"
-            onclick="window.location.href='../pages/compartir.html?name=${article.title}&description=${article.description}&image=${article.thumbnail.path}/portrait_medium.jpg&price=${article.price}'"></i>
+        <button onclick="window.location.href='../pages/compartir.html?name=${article.title}&description=${article.description}&image=${article.thumbnail.path}/portrait_medium.jpg&price=${article.price}'"> <i class="fas fa-share-alt fa-lg"></i></button>
             <small class="price-serie">$${article.price}</small>
-            <i id="carrito-${article.id}" class="fas fa-shopping-cart  style-black"></i>
+            <button id="btn-carrito-${article.id}"> <i id="carrito-${article.id}" class="fas fa-shopping-cart fa-lg"></i></button>
         </div>
         </div>
       </article>`);
@@ -50,11 +54,14 @@ export const printArticle = (article, place) => {
         src="${article.thumbnail.path}/portrait_medium.jpg"
         class="img-article"
       />
-      <div>
+      <div class="div-article-desc">
         <h4 class="desc-article">${article.name}</h4>  
+        <div class="article-div-buttons"> 
+     
+        <button onclick="window.location.href='../pages/compartir.html?name=${article.name}&description=${article.description}&image=${article.thumbnail.path}/portrait_medium.jpg&price=${article.price}'"> <i class="fas fa-share-alt fa-lg "></i></button>
         <small class="price-personaje">$${article.price}</small>
-        <i class="fas fa-share-alt-square" onclick="window.location.href='../pages/compartir.html?name=${article.name}&description=${article.description}&image=${article.thumbnail.path}/portrait_medium.jpg&price=${article.price}'"></i>
-        <i id="carrito-${article.id}" class="fas fa-shopping-cart"></i>
+        <button id="btn-carrito-${article.id}"><i id="carrito-${article.id}" class="fas fa-shopping-cart fa-lg "></i></button>
+        </div>
       </div>
     </article>`);
   }
@@ -78,17 +85,21 @@ const addArticleToCarrito = (article) => {
   var path = window.location.pathname;
   var page = path.split('/').pop();
 
-  if (article.place == 'carrito' && !article.historial && page != 'search.html') {
+  if (article.place == 'carrito' && !article.historial && page == 'carrito.html') {
     $(`#carrito-${article.id}`).removeClass('fa-shopping-cart');
     $(`#carrito-${article.id}`).addClass('fa-trash');
 
-    $(`#carrito-${article.id}`).on('click', (e) => {
+    $(`#btn-carrito-${article.id}`).on('click', (e) => {
       removeCart(article);
       e.stopImmediatePropagation();
     });
   } else {
-    $(`#carrito-${article.id}`).on('click', () => {
+    $(`#btn-carrito-${article.id}`).on('click', () => {
       addCart(article);
+      if (page == 'index.html' || page == 'search.html') {
+        $(`#carrito-${article.id}`).removeClass('fa-shopping-cart');
+        $(`#carrito-${article.id}`).addClass('fa-check');
+      }
     });
   }
 };
