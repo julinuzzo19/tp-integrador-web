@@ -161,7 +161,7 @@ const showToast = () => {
   toast.className = 'show';
   setTimeout(() => {
     toast.className = toast.className.replace('show', '');
-  }, 3000);
+  }, 1000);
 };
 
 //Metodos de localstorage
@@ -220,6 +220,7 @@ export const printArticlesCarrito = () => {
       'font-style': 'italic'
     });
     $('#section-carrito-articles').append(text);
+    printArticlesHistorial();
   }
 
   articlesLS.forEach((article) => {
@@ -231,6 +232,7 @@ export const printArticlesCarrito = () => {
 };
 
 export const printArticlesHistorial = () => {
+  $('#section-historial-articles').html('');
   let articlesHistory = getArticlesLS('historial');
 
   //Si no hay elementos en el historial muestra un mensaje
