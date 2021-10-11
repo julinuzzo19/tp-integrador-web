@@ -59,6 +59,15 @@ nav {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+article {
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2);
+}
+article:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+}
+article button{
+  border-radius: 4px;
+}
 
 /* Articles personajes */
 .article-personajes {
@@ -120,13 +129,13 @@ nav {
 }
 
 /* Articles Serie */
+
 .article-series {
   background-color: white;
   width: 45%;
   height: 42vh;
   margin: 6px;
   margin-bottom: 10px;
-  border: #000 solid 2px;
 }
 .article-series p {
   font-family: 'Roboto Condensed';
@@ -237,6 +246,16 @@ footer {
   width: 100%;
   background: #111;
 }
+.fab {
+  color: white;
+  margin: 2px;
+}
+.div-redes-icons {
+  text-align: center;
+}
+footer .fas {
+  color: white;
+}
 .main-content {
   display: flex;
 }
@@ -244,6 +263,7 @@ footer {
   flex-basis: 50%;
   padding: 10px 20px;
 }
+
 .box h2 {
   color: #fffcfc;
   font-size: 1.125rem;
@@ -267,7 +287,7 @@ footer {
   content: '';
   height: 2px;
   width: 15%;
-  background: #049444;
+  background: white;
   top: -10px;
 }
 .left .content p {
@@ -303,9 +323,7 @@ footer {
   transition: 0.3s;
   cursor: pointer;
 }
-.center .content .fas:hover {
-  background: #049444;
-}
+
 .center .content .text {
   font-size: 1.0625rem;
   font-size: 500;
@@ -346,14 +364,16 @@ footer {
 
 .right form .btn {
   margin-top: 10px;
+  text-align: center;
 }
 
 .right form .btn button {
   height: 40px;
-  width: 100%;
+  width: 50%;
+
   border: none;
   outline: none;
-  background: #049444;
+
   font-size: 1.0625rem;
   font-weight: 500;
   cursor: pointer;
@@ -361,7 +381,7 @@ footer {
 }
 
 .right form .btn button:hover {
-  background: #000;
+  background: rgb(207, 198, 198);
 }
 
 .bottom center {
@@ -375,7 +395,7 @@ footer {
 }
 
 .bottom center a {
-  color: #049444;
+  /* color: #049444; */
   text-decoration: none;
 }
 
@@ -581,9 +601,9 @@ ul {
     grid-column: 2/3;
   }
   #menu li a {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     color: white;
-    font-size: medium;
+    font-size: large;
   }
 
   #menuToggle input {
@@ -698,6 +718,9 @@ ul {
     display: grid;
     grid-template-columns: 15% 70% 15%;
     justify-content: center;
+  }
+  #menu li a {
+    font-size: larger;
   }
   .div-title-img {
     text-align: center;
