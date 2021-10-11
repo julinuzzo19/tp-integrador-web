@@ -37,7 +37,7 @@
               >Historial</a
             ></li
           >
-          <li><a class="toggle-nav-a" href="#about">Sobre nosotros</a></li>
+          <li><a class="toggle-nav-a"href="sobrenosotros.html">Sobre nosotros</a></li>
 
           <li class="item-footer">
             <svg width="130" height="52" xmlns="http://www.w3.org/2000/svg">
@@ -739,7 +739,7 @@
           <div class="right box">
               <h2>Contact Us</h2>
               <div class="content">
-                  <form action="#">
+                <form id="form-mail">
                       <div class="form-email">
                           <div class="text">Email *</div>
                           <input type="email" required>
@@ -748,9 +748,21 @@
                           <div class="text">Message *</div>
                           <textarea cols="25" rows="2" required></textarea>
                       </div>
-                      <div class="btn">
-                          <button type="submit">Send</button>
+                      
+                        <div class="div-buttons">
+                          <button type="submit" id="btn-form">Enviar mail</button>
                       </div>
+                      <script>
+                        document.getElementById('form-mail').onsubmit = () => {
+                          event.preventDefault();
+                          let emailReceptor = document.getElementById('receptor').value;
+                          let asunto = document.getElementById('mensaje-compartir').value;
+                          let body = `Titulo: ${nameArticle}.%0ADescripción del artículo:${descArticle}.%0APrecio: ${priceArticle}`;
+                      
+                          window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${emailReceptor}&su=${asunto}&body=${body}`;
+                        };
+                      </script>
+                   
                   </form>
               </div>
           </div>
