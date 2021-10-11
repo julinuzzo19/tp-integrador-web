@@ -64,7 +64,7 @@ nav {
 .article-personajes {
   background-color: black;
   width: 45%;
-  height: 248px;
+  height: 43vh;
   margin: 6px;
   margin-bottom: 10px;
   position: relative;
@@ -80,6 +80,7 @@ nav {
 .img-article {
   border-bottom: rgba(0, 0, 0, 0.2) solid 1px;
   width: 100%;
+  min-height: 25vh;
   height: 30vh;
   border-bottom: white solid 3px;
 }
@@ -104,9 +105,6 @@ nav {
   font-weight: bolder;
   text-align: center;
 }
-.article-personajes .article-div-buttons button {
-  background: #fff;
-}
 .article-personajes .fa-shopping-cart {
   color: black;
 }
@@ -118,15 +116,14 @@ nav {
 }
 .article-personajes .article-div-buttons button {
   background: #fff;
-  height: 30px;
-  width: 40px;
+  height: 5vh;
 }
 
 /* Articles Serie */
 .article-series {
   background-color: white;
   width: 45%;
-  height: 245px;
+  height: 42vh;
   margin: 6px;
   margin-bottom: 10px;
   border: #000 solid 2px;
@@ -159,8 +156,7 @@ nav {
 
 .article-series .article-div-buttons button {
   background: #000;
-  height: 30px;
-  width: 40px;
+  height: 5vh;
 }
 
 .price-serie {
@@ -191,9 +187,6 @@ nav {
 /* FIN Section and articles */
 
 /* Pagina compartir */
-#form-mail {
-  /* background: grey; */
-}
 .container-form {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -207,20 +200,15 @@ nav {
   height: 120px;
   width: 150px;
 }
-#article-description {
-}
-
 .div-datos-envio {
   display: grid;
 }
-
 .div-buttons {
   display: grid;
   justify-content: center;
   grid-template-columns: 30% 30%;
   column-gap: 20%;
 }
-
 .container-form input[type='text'],
 select {
   width: 100%;
@@ -243,45 +231,29 @@ select {
   border-radius: 4px;
   cursor: pointer;
 }
-
-/* input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-div {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}   */
-
 /* Footer */
 footer {
   bottom: 0px;
   width: 100%;
   background: #111;
 }
-
 .main-content {
   display: flex;
 }
-
 .main-content .box {
   flex-basis: 50%;
   padding: 10px 20px;
 }
-
 .box h2 {
   color: #fffcfc;
   font-size: 1.125rem;
   font-weight: 600;
   text-transform: uppercase;
 }
-
 .box .content {
   margin: 20px 0 0 0;
   position: relative;
 }
-
 .box .content:before {
   position: absolute;
   content: '';
@@ -290,7 +262,6 @@ footer {
   width: 100%;
   background: #1a1a1a;
 }
-
 .box .content:after {
   position: absolute;
   content: '';
@@ -299,19 +270,15 @@ footer {
   background: #049444;
   top: -10px;
 }
-
 .left .content p {
   text-align: justify;
 }
-
 .left .content .social {
   margin: 20px 0 0 0;
 }
-
 .left .content .social a {
   padding: 0 2px;
 }
-
 .left .content .social a span {
   height: 40px;
   width: 40px;
@@ -322,11 +289,9 @@ footer {
   border-radius: 5px;
   transition: 0.3s;
 }
-
 .left .content .social a span:hover {
   background: #049444;
 }
-
 .center .content .fas {
   font-size: 1.4375rem;
   background: #1a1a1a;
@@ -338,11 +303,9 @@ footer {
   transition: 0.3s;
   cursor: pointer;
 }
-
 .center .content .fas:hover {
   background: #049444;
 }
-
 .center .content .text {
   font-size: 1.0625rem;
   font-size: 500;
@@ -563,10 +526,11 @@ ul {
 
 @media (min-width: 768px) {
   nav {
+    display: grid;
+    grid-template-columns: 15% 71% 14%;
     background-color: black;
     height: 65px;
-    display: grid;
-    grid-template-columns: 15% 70% 15%;
+
     justify-content: center;
   }
   .div-title-img {
@@ -648,7 +612,6 @@ ul {
   .article-personajes {
     background-color: black;
     width: 20%;
-    height: 255px;
     margin: 6px;
     margin-bottom: 10px;
     position: relative;
@@ -664,7 +627,6 @@ ul {
   .img-article {
     border-bottom: rgba(0, 0, 0, 0.2) solid 1px;
     width: 100%;
-    height: 30vh;
     border-bottom: white solid 3px;
   }
 
@@ -672,12 +634,48 @@ ul {
   .article-series {
     background-color: white;
     width: 20%;
-    height: 250px;
+    height: 39vh;
+    min-height: 28vh;
+    max-height: 28vh;
     margin: 6px;
     margin-bottom: 10px;
   }
   .article-series div p {
     margin: 0;
+  }
+  .article-series .article-div-buttons button {
+    height: 5vh;
+  }
+  .article-personajes .article-div-buttons button {
+    height: 5vh;
+  }
+
+  @media (min-height: 529px) {
+    .article-series {
+      min-height: 42vh;
+    }
+    .article-personajes {
+      min-height: 42vh;
+    }
+  }
+  @media (min-height: 1024px) {
+    .article-series {
+      min-height: 29vh;
+    }
+    .article-personajes {
+      min-height: 29vh;
+      max-height: 29vh;
+    }
+    .img-article {
+      min-height: 21vh;
+      max-height: 21vh;
+    }
+    .article-series .article-div-buttons button {
+      height: 4vh;
+    }
+    .article-personajes .article-div-buttons button {
+      height: 4vh;
+    }
   }
 }
 
@@ -720,6 +718,9 @@ ul {
     margin-top: 10px;
     width: 100%;
     height: 100%;
+  }
+  .article-series {
+    min-height: 41vh;
   }
 }
 
