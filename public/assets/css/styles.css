@@ -65,7 +65,7 @@ article {
 article:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
 }
-article button{
+article button {
   border-radius: 4px;
 }
 
@@ -244,15 +244,9 @@ select {
 footer {
   bottom: 0px;
   width: 100%;
-  background: #111;
+  background: black;
 }
-.fab {
-  color: white;
-  margin: 2px;
-}
-.div-redes-icons {
-  text-align: center;
-}
+
 footer .fas {
   color: white;
 }
@@ -264,6 +258,38 @@ footer .fas {
   padding: 10px 20px;
 }
 
+.fab {
+  color: white;
+  margin: 2px;
+}
+.phone {
+  display: flex;
+  margin: 10px 0;
+}
+.email {
+  display: flex;
+  margin: 10px 0;
+}
+.place {
+  display: flex;
+  margin: 10px 0;
+}
+.text {
+  align-self: center;
+}
+.div-map {
+  text-align: center;
+  margin-top: 5vh;
+}
+.map {
+  height: 19vh;
+}
+.div-redes-icons a {
+  color: black;
+}
+.div-redes-icons .fab {
+  margin: 15px;
+}
 .box h2 {
   color: #fffcfc;
   font-size: 1.125rem;
@@ -312,6 +338,11 @@ footer .fas {
 .left .content .social a span:hover {
   background: #049444;
 }
+.footer-copy {
+  text-align: center;
+  margin-left: auto;
+  color: white;
+}
 .center .content .fas {
   font-size: 1.4375rem;
   background: #1a1a1a;
@@ -328,10 +359,6 @@ footer .fas {
   font-size: 1.0625rem;
   font-size: 500;
   padding-left: 10px;
-}
-
-.center .content .phone {
-  margin: 10px 0;
 }
 
 .right form .text {
