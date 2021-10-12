@@ -658,26 +658,26 @@
         </div>
       </aside>
       <div class="container">
-        <section>
+        <section align="center">
           <h2 class="subtitle">BUSQUEDA</h2>
 
           <div class="div-filters">
-            <form id="form-filters">
+            <form id="form-filters" >
               <input
+             size="50"
                 type="text"
                 name="search"
                 placeholder="ingrese un personaje o serie"
               />
-
+              <button  id="btn-form" type="submit"class="fas fa-search"></button><br><br>
               <label for="filter">Serie</label>
-              <input type="radio" name="filter" value="serie" />
+              <input type="radio" name="filter" value="serie" /><br>
               <label for="filter">Personaje</label>
-              <input type="radio" name="filter" value="character" checked />
+              <input type="radio" name="filter" value="character" checked /><br>
 
               <label for="filter">Series por personaje</label>
-              <input type="radio" name="filter" value="series-personaje" />
+              <input type="radio" name="filter" value="series-personaje" /><br>
 
-              <button id="btn-form" type="submit">Enviar</button>
             </form>
           </div>
           <div class="section-articles"> </div>
