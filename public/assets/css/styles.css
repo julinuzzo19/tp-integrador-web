@@ -423,7 +423,6 @@ footer .fas {
 }
 
 .bottom center a {
-  /* color: #049444; */
   text-decoration: none;
 }
 
@@ -556,6 +555,36 @@ ul {
   margin: 0 0 0 19px;
 }
 /* FIN Toggle nav */
+
+/* Detalle serie */
+.container-article {
+  display: flex;
+}
+#img {
+  height: 378px;
+  width: 310px;
+}
+.container-info {
+  padding-left: 25px;
+}
+#title {
+  margin-top: 0;
+  font-family: 'Roboto Condensed';
+  font-size: xx-large;
+}
+#desc {
+  font-family: sans-serif;
+}
+#personajes-title {
+  font-size: x-large;
+  font-family: 'Roboto Condensed';
+  margin-top: 13%;
+}
+.container-personajes {
+  font-size: larger;
+  font-weight: 500;
+  font-family: sans-serif;
+}
 
 /* RESPONSIVE 
 ------------------------------------------------------------------------------------------------*/

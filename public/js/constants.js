@@ -33,7 +33,7 @@ export const printArticle = (article, place) => {
   if (article.category === 'serie') {
     $(place).append(`
       <article class="article-series" id="${article.id}">
-        <img id="img-${article.id}" src="${article.thumbnail.path}/portrait_medium.jpg" class="img-article" />
+        <img id="img-${article.id}" src="${article.thumbnail.path}/standard_amazing.jpg" class="img-article" />
         <div class="div-article-desc">
           <p id="p-${article.id}" style=" text-overflow: ellipsis !IMPORTANT;
           white-space: nowrap;
@@ -41,7 +41,7 @@ export const printArticle = (article, place) => {
             ${article.title}
           </p>         
         <div class="article-div-buttons">   
-        <button onclick="window.location.href='../pages/compartir.html?name=${article.title}&description=${article.description}&image=${article.thumbnail.path}/portrait_medium.jpg&price=${article.price}'"> <i class="fas fa-share-alt fa-lg"></i></button>
+        <button onclick="window.location.href='../pages/compartir.html?name=${article.title}&description=${article.description}&image=${article.thumbnail.path}/standard_amazing.jpg&price=${article.price}'"> <i class="fas fa-share-alt fa-lg"></i></button>
             <small class="price-serie">$${article.price}</small>
             <button id="btn-carrito-${article.id}"> <i id="carrito-${article.id}" class="fas fa-shopping-cart fa-lg"></i></button>
         </div>
@@ -53,14 +53,14 @@ export const printArticle = (article, place) => {
     $(place).append(`
       <article class="article-personajes" id="${article.id}">
       <img id="img-${article.id}"
-        src="${article.thumbnail.path}/portrait_medium.jpg"
+        src="${article.thumbnail.path}/standard_fantastic.jpg"
         class="img-article"
       />
       <div class="div-article-desc">
         <h4 class="desc-article">${article.name}</h4>  
         <div class="article-div-buttons"> 
      
-        <button onclick="window.location.href='../pages/compartir.html?name=${article.name}&description=${article.description}&image=${article.thumbnail.path}/portrait_medium.jpg&price=${article.price}'"> <i class="fas fa-share-alt fa-lg "></i></button>
+        <button onclick="window.location.href='../pages/compartir.html?name=${article.name}&description=${article.description}&image=${article.thumbnail.path}/standard_amazing.jpg&price=${article.price}'"> <i class="fas fa-share-alt fa-lg "></i></button>
         <small class="price-personaje">$${article.price}</small>
         <button id="btn-carrito-${article.id}"><i id="carrito-${article.id}" class="fas fa-shopping-cart fa-lg "></i></button>
         </div>
