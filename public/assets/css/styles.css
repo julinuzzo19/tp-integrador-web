@@ -1,5 +1,4 @@
 /* ESTILOS NORMALES PARA MOVILES EN VERTICAL */
-
 body {
   margin: 0;
   padding: 0;
@@ -459,7 +458,7 @@ footer .fas {
   text-decoration: none;
   color: #1e1e23;
   opacity: 1;
-  font-family: 'work sans', sans serif;
+  font-family: 'Roboto Condensed';
   font-size: 1.5em;
   font-weight: 400;
   transition: 200ms;
@@ -525,7 +524,6 @@ ul {
 }
 #menu {
   position: absolute;
-
   height: 400px;
   box-shadow: 0 0 10px #85888c;
   margin: -50px 0 0 -50px;
@@ -546,14 +544,14 @@ ul {
 }
 .item-footer {
   width: 100%;
-  margin: 150px 0 0 12px;
+  margin: 140px 0 0 12px;
   text-align: center;
   padding-bottom: 0 !important;
 }
 .item-copyright-footer {
   padding: 0 !important;
   text-align: center;
-  margin: 0 0 0 21px;
+  margin: 0 0 0 19px;
 }
 /* FIN Toggle nav */
 
@@ -641,6 +639,19 @@ ul {
   }
   .item-footer {
     display: none;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .main-content .box {
+    flex-basis: 44%;
+    padding: 10px 20px;
+  }
+  .right {
+   width: 100%;
   }
 
   /* ----------------------------------------------------------------------- */
