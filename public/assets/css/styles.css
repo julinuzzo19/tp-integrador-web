@@ -375,12 +375,14 @@ footer .fas {
   width: 100%;
   font-size: 1.0625rem;
   background: #fffafa;
-  padding-left: 10px;
+  padding: 0px 0px;
+  /* padding-left: 10px; */
   border: 1px solid #222222;
 }
 
 .right form input {
   height: 35px;
+  width: 100%;
 }
 
 .right form input:focus,
@@ -651,7 +653,7 @@ ul {
     padding: 10px 20px;
   }
   .right {
-   width: 100%;
+    width: 100%;
   }
 
   /* ----------------------------------------------------------------------- */
