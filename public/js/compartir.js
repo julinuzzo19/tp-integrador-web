@@ -17,5 +17,59 @@ $(document).ready(() => {
     let body = `Titulo: ${nameArticle}.%0ADescripción del artículo:${descArticle}.%0APrecio: ${priceArticle}`;
 
     window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${emailReceptor}&su=${asunto}&body=${body}`;
-  };
+  
+
+    function iniciar() {
+      document.informacion.addEventListener('invalid', validacion, true);
+      document.informacion.addEventListener('input', controlar, false);
+    }
+    function validacion(e) {
+      let elemento = e.target;
+      elemento.style.background = '#FFDDDD';
+    }
+    
+
+    function controlar(e) {
+      elemento = e.target;
+      if (elemento.validity.valid) {
+        elemento.style.background = '#FFFFFF';
+      } else {
+        elemento.style.background = '#FFDDDD';
+      }
+    }
+    
+    window.addEventListener('load', iniciar, false);
+
+  function captura() {
+   
+    let email = document.getElementById('email').value;
+    
+    let expRegEmail = /^\S+@\S+\.\S+$/;
+    if (
+      email === ''
+    ) {
+      alert('Faltan campos requeridos por completar.');
+    } else if (
+      (
+        expRegEmail.test(email)
+      )
+    ) {
+      alert('Hay campos con formato incorrecto.');
+    } else {
+    }
+  }
+}
+
+  
+document.getElementById('cancelar').onclick = () => {
+  var resultado = window.confirm('Desea volver a la pagina anterior?');
+  if (resultado) {
+    window.location.href = '../public\index.html';
+  } else {
+  }
+}
 });
+
+
+
+

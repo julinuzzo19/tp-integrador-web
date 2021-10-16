@@ -10,9 +10,7 @@ aside {
   font-family: 'Roboto Condensed';
 }
 /* ESTILOS DE PAGINA DE BUSQUEDA  */
-.div-filters {
-  margin-bottom: 20px;
-}
+
 .div-more-results {
   display: flex;
   justify-content: center;
@@ -57,6 +55,10 @@ nav {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+.section-input{
+  border: rgb(1, 1, 1) 5px solid;
+
 }
 article {
   box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2);
@@ -196,9 +198,14 @@ article button {
 
 /* Pagina compartir */
 .container-form {
-  display: grid;
-  grid-template-columns: 50% 50%;
+  width: 80%;
+  display: center;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 
 .div-datos-article {
   display: grid;
@@ -206,7 +213,7 @@ article button {
 #img-article-compartido {
   justify-self: center;
   height: 120px;
-  width: 150px;
+  width: 220px;
 }
 .div-datos-envio {
   display: grid;
@@ -598,9 +605,20 @@ ul {
   .article-series {
     width: 30%;
   }
+ .div-filters{
+   display: grid;
+   border-bottom: rgba(0, 0, 0, 0.2) solid 1px;
+   margin: auto;
+   padding: 1em;
+  }
 }
 
 @media (min-width: 768px) {
+  .form-filters-search{
+    width: 10%;
+    display: grid;
+
+  }
   nav {
     display: grid;
     grid-template-columns: 15% 71% 14%;
@@ -740,6 +758,15 @@ ul {
   }
 
   @media (min-height: 529px) {
+   
+    .form-filters{
+      margin: 5px;
+      padding: 1em;
+      transition: 0.3s;
+      box-shadow: 0 0 0 0.1em #181818;
+      color: rgb(1, 1, 1);
+      background-color: var(--secundario);
+    }
     .article-series {
       min-height: 42vh;
     }
@@ -766,12 +793,19 @@ ul {
       height: 4vh;
     }
   }
+  .form-search{
+    width: 30%;
+  }
 }
 
 /* Tablets en horizontal y escritorios normales
 -------------------------------------------------------------------------------------------------*/
 
 @media (min-width: 1024px) {
+  .form-input{
+    width: 40%;
+
+  }
   main {
     display: grid;
     grid-template-columns: 80% 20%;
@@ -814,6 +848,15 @@ ul {
   .article-series {
     min-height: 41vh;
   }
+  .div-filters{
+    display: grid;
+    border-bottom: rgba(0, 0, 0, 0.2) solid 1px;
+    margin: auto;
+    padding: 1em;
+     transition: 0.3s;
+     color: rgb(1, 1, 1);
+     background-color: var(--secundario);
+   }
 }
 
 /*------------------------------------------------- TOAST------------------------------------------------------- */
@@ -883,3 +926,9 @@ ul {
     opacity: 0;
   }
 }
+
+.required-input {
+  color: red;
+}
+
+
