@@ -10,66 +10,53 @@ $(document).ready(() => {
   document.getElementById('nombre-article-compartido').value = nameArticle;
   document.getElementById('article-description').value = descArticle;
 
+  let email = document.getElementById('email').value;
+  let emailReceptor = document.getElementById('receptor').value;
+
+  document.getElementById('email').addEventListener('invalid', validacion);
+  document.getElementById('receptor').addEventListener('invalid', validacion);
+  document.getElementById('receptor').addEventListener('change', controlar);
+  document.getElementById('email').addEventListener('change', controlar);
+
   document.getElementById('form-mail').onsubmit = () => {
     event.preventDefault();
-    let emailReceptor = document.getElementById('receptor').value;
-    let asunto = document.getElementById('mensaje-compartir').value;
-    let body = `Titulo: ${nameArticle}.%0ADescripción del artículo:${descArticle}.%0APrecio: ${priceArticle}`;
-
-    window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${emailReceptor}&su=${asunto}&body=${body}`;
-  
-
-    function iniciar() {
-      document.informacion.addEventListener('invalid', validacion, true);
-      document.informacion.addEventListener('input', controlar, false);
-    }
-    function validacion(e) {
-      let elemento = e.target;
-      elemento.style.background = '#FFDDDD';
-    }
-    
-
-    function controlar(e) {
-      elemento = e.target;
-      if (elemento.validity.valid) {
-        elemento.style.background = '#FFFFFF';
-      } else {
-        elemento.style.background = '#FFDDDD';
-      }
-    }
-    
-    window.addEventListener('load', iniciar, false);
-
-  function captura() {
-   
-    let email = document.getElementById('email').value;
-    
     let expRegEmail = /^\S+@\S+\.\S+$/;
-    if (
-      email === ''
-    ) {
+    email = document.getElementById('email').value;
+    emailReceptor = document.getElementById('receptor').value;
+
+    if (email === '' || emailReceptor === '') {
       alert('Faltan campos requeridos por completar.');
-    } else if (
-      (
-        expRegEmail.test(email)
-      )
-    ) {
+    } else if (expRegEmail.test(email) && expRegEmail.test(emailReceptor)) {
+      let asunto = document.getElementById('mensaje-compartir').value;
+      let body = `Titulo: ${nameArticle}.%0ADescripción del artículo:${descArticle}.%0APrecio: $${priceArticle}`;
+      window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${emailReceptor}&su=${asunto}&body=${body}`;
+    } else {
       alert('Hay campos con formato incorrecto.');
+    }
+  };
+
+  $('#cancelar').click(() => {
+    var resultado = window.confirm('Desea volver a la pagina anterior?');
+    if (resultado) {
+      window.location.href = '../index.html';
     } else {
     }
-  }
-}
-
-  
-document.getElementById('cancelar').onclick = () => {
-  var resultado = window.confirm('Desea volver a la pagina anterior?');
-  if (resultado) {
-    window.location.href = '../public\index.html';
-  } else {
-  }
-}
+  });
 });
 
+const validacion = (e) => {
+  let elemento = e.target;
+  elemento.style.background = '#FFDDDD';
+};
 
+const controlar = (e) => {
+  let elemento = e.target;
 
+  let expRegEmail = /^\S+@\S+\.\S+$/;
 
+  if (expRegEmail.test(e.target.value)) {
+    elemento.style.background = '#FFFFFF';
+  } else {
+    elemento.style.background = '#FFDDDD';
+  }
+};
