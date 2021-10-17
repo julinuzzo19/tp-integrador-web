@@ -6,10 +6,13 @@ import {
 } from './constants.js';
 
 var limitResults = 10;
+var offset = 0;
+var moreResults = false;
 var URL;
 
 $('#btn-ver-mas').click(() => {
-  limitResults += 10;
+  offset += 10;
+  moreResults = true;
   getDataForm();
 });
 
@@ -22,11 +25,17 @@ const getDataForm = () => {
   const form = document.getElementById('form-filters');
   let search = form.elements.search.value;
   const category = form.elements.filter.value;
-  searchArticles(search, category);
+  if (moreResults) {
+    searchArticles(search, category);
+  } else {
+    searchArticles(search, category);
+  }
 };
 
 const searchArticles = (query, category) => {
-  resetSearch();
+  if (!moreResults) {
+    resetSearch();
+  }
 
   let queryParam;
 
@@ -66,8 +75,20 @@ const searchArticles = (query, category) => {
 
 const getArticles = (url, category) => {
   $.get({
-    url: `${url}&limit=${limitResults}`,
+    url: `${url}&limit=${limitResults}&offset=${offset}`,
     success: (response) => {
+      console.log(response, response.data.count);
+      if (response.data.count == 0) {
+        const text = $('<h3>')
+          .text('No hay elementos que coincidan con la busqueda.')
+          .css({
+            'font-family': 'Roboto Condensed',
+            color: '#d4cdcd',
+            'font-style': 'italic'
+          });
+        $('.section-articles').append(text);
+      }
+
       let articlesFounded = response.data.results;
 
       if (category === 'serie') {
@@ -95,6 +116,8 @@ const getArticles = (url, category) => {
       }
     }
   });
+
+  moreResults = false;
 };
 
 const resetSearch = () => {
