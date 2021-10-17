@@ -456,10 +456,10 @@
               <legend>Datos de envío</legend>
               <div class="div-datos-envio">
                 <label for="input-email">Correo emisor:<span class="required-input">*</span></label>
-                <input  id="email" type="text"placeholder="Ingrese su correo" required />
+                <input  id="email"pattern=".+@gmail\.com" type="text"placeholder="Ingrese su correo" required />
 
                 <label for="receptor">Correo destino:<span class="required-input">*</span></label>
-                <input id="receptor" type="text" placeholder="Ingrese su correo" required />
+                <input id="receptor"pattern=".+@gmail\.com" type="text" placeholder="Ingrese su correo" required />
 
                 <label for="mensaje-compartir">Mensaje</label>
 
@@ -470,7 +470,7 @@
          
           </div>
           <div class="div-buttons">
-            <button  type ="submit" id = "enviar" > Enviar </button>
+            <button  type ="submit" id = "enviar" onclick = "captura()">Enviar</button>
             <button type ="submit" id="cancelar" name="btn-cancelar" type="button">Cancelar</button>
             <!-- <button type="submit" id="btn-form">Enviar mail</button> -->
           </div>
